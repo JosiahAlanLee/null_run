@@ -1,0 +1,262 @@
+{
+  "id": "freedoom1-E2M5-s0087",
+  "source_wad": "freedoom1.wad",
+  "source_map": "E2M5",
+  "source_sectors": [
+    87,
+    137,
+    139,
+    140,
+    141,
+    142,
+    350
+  ],
+  "source_sha256": "7323bcc168c5a45ff10749b339960e98314740a734c30d4b9f3337001f9e703d",
+  "file": "freedoom1-E2M5-s0087.udmf",
+  "bounds": [
+    336,
+    256
+  ],
+  "floor_levels": [
+    0
+  ],
+  "verticality": 0,
+  "feel": "loop-cluster",
+  "sockets": [
+    {
+      "source_line": 349,
+      "source_sectors": [
+        87,
+        86
+      ],
+      "line": 2,
+      "width": 64.0,
+      "floor": 0,
+      "orientation": 180.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 393,
+      "source_sectors": [
+        87,
+        91
+      ],
+      "line": 4,
+      "width": 128.0,
+      "floor": 0,
+      "orientation": 180.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 407,
+      "source_sectors": [
+        87,
+        86
+      ],
+      "line": 5,
+      "width": 64.0,
+      "floor": 0,
+      "orientation": 180.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 921,
+      "source_sectors": [
+        350,
+        19
+      ],
+      "line": 8,
+      "width": 128.0,
+      "floor": 0,
+      "orientation": 90.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 925,
+      "source_sectors": [
+        350,
+        138
+      ],
+      "line": 9,
+      "width": 96.0,
+      "floor": 0,
+      "orientation": 270.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 927,
+      "source_sectors": [
+        350,
+        138
+      ],
+      "line": 11,
+      "width": 96.0,
+      "floor": 0,
+      "orientation": 270.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 1169,
+      "source_sectors": [
+        137,
+        351
+      ],
+      "line": 48,
+      "width": 8.0,
+      "floor": 0,
+      "orientation": 180.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 1198,
+      "source_sectors": [
+        137,
+        351
+      ],
+      "line": 49,
+      "width": 8.0,
+      "floor": 0,
+      "orientation": 90.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 1201,
+      "source_sectors": [
+        137,
+        351
+      ],
+      "line": 50,
+      "width": 8.0,
+      "floor": 0,
+      "orientation": 270.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 1832,
+      "source_sectors": [
+        137,
+        347
+      ],
+      "line": 54,
+      "width": 96.0,
+      "floor": 0,
+      "orientation": 0.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 1847,
+      "source_sectors": [
+        137,
+        351
+      ],
+      "line": 55,
+      "width": 8.0,
+      "floor": 0,
+      "orientation": 90.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 1848,
+      "source_sectors": [
+        137,
+        351
+      ],
+      "line": 56,
+      "width": 8.0,
+      "floor": 0,
+      "orientation": 180.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 1849,
+      "source_sectors": [
+        137,
+        351
+      ],
+      "line": 57,
+      "width": 8.0,
+      "floor": 0,
+      "orientation": 270.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 1850,
+      "source_sectors": [
+        137,
+        351
+      ],
+      "line": 58,
+      "width": 8.0,
+      "floor": 0,
+      "orientation": 0.0,
+      "status": "sealed-candidate-requires-adapter"
+    },
+    {
+      "source_line": 1851,
+      "source_sectors": [
+        137,
+        351
+      ],
+      "line": 59,
+      "width": 8.0,
+      "floor": 0,
+      "orientation": 0.0,
+      "status": "sealed-candidate-requires-adapter"
+    }
+  ],
+  "door_sectors_frozen_open": [],
+  "line_actions_stripped": 0,
+  "seams": [
+    {
+      "sectors": [
+        86,
+        87
+      ],
+      "kind": "stair-head"
+    },
+    {
+      "sectors": [
+        87,
+        91
+      ],
+      "kind": "narrow-corridor"
+    },
+    {
+      "sectors": [
+        19,
+        350
+      ],
+      "kind": "lift-or-door"
+    },
+    {
+      "sectors": [
+        138,
+        350
+      ],
+      "kind": "stair-head"
+    },
+    {
+      "sectors": [
+        139,
+        141
+      ],
+      "kind": "narrow-corridor"
+    },
+    {
+      "sectors": [
+        137,
+        351
+      ],
+      "kind": "door"
+    },
+    {
+      "sectors": [
+        137,
+        347
+      ],
+      "kind": "narrow-corridor"
+    }
+  ],
+  "audit": "edge-balanced-closed",
+  "production_ready": false
+}

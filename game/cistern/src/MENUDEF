@@ -1,0 +1,2 @@
+OptionValue "C7WalkProfiles" {0,"Careful / 2.65 m/s" 1,"Brisk / 4.03 m/s"}
+OptionMenu "NullRunMovementOptions" { Title "Cyborg locomotion" Option "Walk profile", "nr_walk_profile", "C7WalkProfiles" Slider "Walking speed trim", "nr_walk_scale", 0.80, 1.50, 0.05, 2 StaticText "F7: profile / minus and equals: trim" Control "Hurry (hold Shift)", "+speed" Control "Overdrive (hold Alt)", "+user4" Control "Field repair (hold G)", "+user3" }

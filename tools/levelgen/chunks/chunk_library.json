@@ -1,0 +1,3568 @@
+{
+  "meta": {
+    "stratum": "cistern",
+    "scale": "32 map units = 1 m",
+    "conventions": {
+      "coords": "UZDoom map coordinates: +x east, +y south (as in geometry_v5.py and cistern.udmf)",
+      "normal_deg": "0 = east (+x), 90 = south (+y), 180 = west (-x), 270 = north (-y); outward from the footprint",
+      "footprint": "simple polygon in local units; order-independent (validator uses ray casts)",
+      "socket_width": ">= 128 u; the generator snaps its own 128 u segment to the socket centre and tangent",
+      "step_riser": "<= 24 u; the slice's stair risers are 8 u over 32 u treads",
+      "headroom": ">= 60 u (player height 60 u); player radius 12 u",
+      "light_band": "[min, max] of the slice's +/-8 u per-room jitter, clamped 64..208"
+    },
+    "generator_contract": {
+      "expected_fields": "template_id, tags, size_xy_u, headroom_u, light_level, material, pillars_local_xy_r, baffle_local_seg, default_landmark (Argon ChunkTemplate) plus footprint_local_u, sockets, floor_z_u, ceiling_z_u, light_band, mechanisms, encounter, rarity_weight, landmark_text",
+      "socket_matching": "snap socket to socket by centre and tangent; verify the two floor z values are within one step (<= 24 u) unless a stair/lift/drop link carries the change",
+      "encounter_placement": "ARMATURE_PACK rooms get an interior dogleg baffle; HOLLOW_REDEAD_BAY rooms must sit at a convergence (>= 3 sockets); never fight_required on a 128 u choke",
+      "wayfinding": "transom states on sockets follow WAYFINDING.md: steady / flicker / dark_clean / dark_dust; never a lit transom on a dead end or optional room"
+    },
+    "sources": [
+      "geometry_v5.py, build_v5.py, harvest.py, harvest-provenance.json, PLAYTEST.md, REVIEW.md, ROUTING.md (codex nullrun-modular-20261101 job-20261102-005051)",
+      "CISTERN-TEXT.md, WAYFINDING.md, SOUND-CUES.md (deepseek nullrun-cistern-text-20261102)",
+      "mapdata.json (codex nullrun-cistern-v7-20261102)",
+      "nullrun_cyclic_generator_and_proof.py (argon-20261102-1222-r5fix): CHUNK_LIBRARY / ChunkTemplate field names",
+      "PILLARS.md (pillars 4-5: Purgatorio terraces, panic rules, spawn pairing)"
+    ]
+  },
+  "templates": [
+    {
+      "id": "SLICE_TIDAL_HUB",
+      "template_id": "SLICE_TIDAL_HUB",
+      "tags": [
+        "hub",
+        "junction",
+        "set_piece",
+        "room"
+      ],
+      "origin": "slice:geometry_v5:tidal_hub",
+      "rarity_weight": 1.0,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          256,
+          64
+        ],
+        [
+          64,
+          256
+        ],
+        [
+          -128,
+          256
+        ],
+        [
+          -256,
+          128
+        ],
+        [
+          -256,
+          -192
+        ],
+        [
+          -192,
+          -256
+        ],
+        [
+          128,
+          -256
+        ],
+        [
+          256,
+          -128
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 320,
+      "headroom_u": 320,
+      "light_level": 128,
+      "light_band": [
+        120,
+        136
+      ],
+      "material": "porcelain_tile",
+      "style": "caustic",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "south",
+          "pos": [
+            0,
+            256
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "branch",
+          "transom": "dark_dust",
+          "plate": "B1 - BASIN STAIR - SHUT THIS SIDE - WORKS ONLY",
+          "note": "near face of the shortcut; far transom lit through the gap (W17)"
+        },
+        {
+          "id": "north",
+          "pos": [
+            0,
+            -256
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "G1 - GAUGE GALLERY - HUB",
+          "note": "door from the intake; teaches code=destination"
+        },
+        {
+          "id": "east",
+          "pos": [
+            256,
+            0
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "W3 - WEIR WALK - UP AND OVER",
+          "note": "east service route, the high way"
+        },
+        {
+          "id": "west",
+          "pos": [
+            -256,
+            0
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "S4 - SLUICE RUN - KEEP TO THE WALL",
+          "note": "west water route"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "calm",
+        "sound_before_sight": false,
+        "convergence": true,
+        "notes": "The hub is the calm first impression (PILLARS 5). No creature spawns here."
+      },
+      "landmark_text": {
+        "plaque": "THE WATER HAS BEEN THIS HIGH LONGER THAN THE BRICK.",
+        "gauge": "staff gauge: +2.40 painted by hand; +1.95 and +1.60 scratched and crossed out, labelled, not painted over",
+        "notice": "NOTICE 51 - GAUGE. The gauge is correct. If the gauge disagrees with the water, report the water.",
+        "wayfinding": [
+          "painted plan, wrong in one seed-fixed detail (W14)",
+          "pace plates M-L2 / M-S4 / M-P2 / M-W3",
+          "four transoms: L2 steady, S4 steady, P2 flicker, W3 steady"
+        ],
+        "cues": [
+          "G (float-well clack)",
+          "T (transom hum)",
+          "R (ringing pipe striker)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_FLOAT_WELL_CLACK",
+      "notes": "Real slice hub: diamond (clipped) tidal chamber, 10 m tall, caustic light. Float well is the only one in the stratum."
+    },
+    {
+      "id": "SLICE_INTAKE",
+      "template_id": "SLICE_INTAKE",
+      "tags": [
+        "corridor",
+        "room"
+      ],
+      "origin": "slice:geometry_v5:intake",
+      "rarity_weight": 1.0,
+      "connector_kind": "corridor",
+      "footprint_local_u": [
+        [
+          -64,
+          -640
+        ],
+        [
+          64,
+          -640
+        ],
+        [
+          64,
+          -256
+        ],
+        [
+          -64,
+          -256
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 96,
+      "headroom_u": 96,
+      "light_level": 88,
+      "light_band": [
+        80,
+        96
+      ],
+      "material": "poured_concrete",
+      "style": "single-practical",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "spawn",
+          "pos": [
+            0,
+            -640
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "spawn",
+          "transom": "dark_dust",
+          "plate": null,
+          "note": "entry from the works above; sealed behind the player"
+        },
+        {
+          "id": "south",
+          "pos": [
+            0,
+            -256
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "G1 - GAUGE GALLERY - HUB",
+          "note": "first lit transom in the level; teaches the sign system in ninety seconds"
+        }
+      ],
+      "pillars_local_xy_r": [
+        [
+          -48,
+          -544,
+          16
+        ],
+        [
+          48,
+          -448,
+          16
+        ],
+        [
+          -48,
+          -352,
+          16
+        ]
+      ],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "calm",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Spawn room. Nothing attacks here; the stores plinths teach physical pickups (F, rest on surfaces)."
+      },
+      "landmark_text": {
+        "plaque": "DESCENT WORKS - CISTERN 3 - BUILT TO HOLD, NOT TO PASS",
+        "gauge": null,
+        "notice": "NOTICE 63 - TRANSFER. Staff below the line keep their own lamps.",
+        "wayfinding": [
+          "pace plate M-G1 - LAMP 12"
+        ],
+        "cues": [
+          "T (transom hum, first exit cue)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_STORES_PLINTH",
+      "notes": "Three 32u stores plinths (z 26..96, solid tops) hold the medical tin, ammo and scrap. Plinths are physical: nothing floats."
+    },
+    {
+      "id": "SLICE_EAST_SERVICE",
+      "template_id": "SLICE_EAST_SERVICE",
+      "tags": [
+        "corridor",
+        "junction"
+      ],
+      "origin": "slice:geometry_v5:east_service+service_gate",
+      "rarity_weight": 2.0,
+      "connector_kind": "corridor",
+      "footprint_local_u": [
+        [
+          256,
+          -64
+        ],
+        [
+          512,
+          -64
+        ],
+        [
+          512,
+          64
+        ],
+        [
+          256,
+          64
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 96,
+      "headroom_u": 96,
+      "light_level": 96,
+      "light_band": [
+        88,
+        104
+      ],
+      "material": "poured_concrete",
+      "style": "cold-strip",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            256,
+            0
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "G1",
+          "note": "back to the hub"
+        },
+        {
+          "id": "east",
+          "pos": [
+            512,
+            0
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "W3 - WEIR WALK - UP AND OVER",
+          "note": "toward the east stair"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "gate": {
+          "kind": "service_door",
+          "openable": true,
+          "native": "Door_Raise",
+          "note": "one openable service door mid-run (tag 2103 in the slice); never a latch"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "128 u span: never place a fight_required Armature room here (narrow choke rule)."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": "NOTICE 52 - PACE PLATES. Measured at low water.",
+        "wayfinding": [
+          "pace plate",
+          "chevron +2 LEVEL at the stair mouth"
+        ],
+        "cues": [
+          "silence approach before the stair (6-10 m)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice corridor with the native service door folded in. Cold strip lighting."
+    },
+    {
+      "id": "SLICE_EAST_STAIR",
+      "template_id": "SLICE_EAST_STAIR",
+      "tags": [
+        "stair",
+        "corridor"
+      ],
+      "origin": "slice:geometry_v5:east_stair",
+      "rarity_weight": 1.5,
+      "connector_kind": "stair",
+      "footprint_local_u": [
+        [
+          512,
+          -64
+        ],
+        [
+          768,
+          -64
+        ],
+        [
+          768,
+          64
+        ],
+        [
+          512,
+          64
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 208,
+      "headroom_u": 144,
+      "light_level": 120,
+      "light_band": [
+        112,
+        128
+      ],
+      "material": "weathered_brick",
+      "style": "sodium",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            512,
+            0
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "ceiling_z_u": 152,
+          "role": "entry",
+          "transom": "none",
+          "plate": "chevron +2 LEVEL (W7)",
+          "note": "first riser (0 -> 8 u) starts at the threshold"
+        },
+        {
+          "id": "east",
+          "pos": [
+            768,
+            0
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "ceiling_z_u": 208,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "W3 - WEIR WALK - UP AND OVER",
+          "note": "landing gauge at the top (W7: gauge at the top landing)"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [
+        {
+          "from_socket": "west",
+          "to_socket": "east",
+          "risers": 8,
+          "rise_per_riser_u": 8,
+          "tread_u": 32,
+          "note": "straight flight, ceiling follows the run"
+        }
+      ],
+      "vertical_links": [
+        {
+          "kind": "stair",
+          "from_socket": "west",
+          "to_socket": "east",
+          "delta_z_u": 64
+        }
+      ],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Stairs narrow the field of view; sound arrives from the gallery before the player crests."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "chevron +2 LEVEL relative to Works Zero (never relative to the player)"
+        ],
+        "cues": [
+          "T (transom hum at the top)",
+          "W (shaft tone, dry: an exit above)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice stair: 8 risers of 8 u over 32 u treads (z 8 -> 64), headroom 144. Step rule (<=24 u) respected."
+    },
+    {
+      "id": "SLICE_GALLERY",
+      "template_id": "SLICE_GALLERY",
+      "tags": [
+        "room",
+        "junction",
+        "set_piece"
+      ],
+      "origin": "slice:geometry_v5:gallery",
+      "rarity_weight": 1.2,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          768,
+          -128
+        ],
+        [
+          1088,
+          -128
+        ],
+        [
+          1088,
+          768
+        ],
+        [
+          768,
+          768
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 288,
+      "headroom_u": 224,
+      "light_level": 144,
+      "light_band": [
+        136,
+        152
+      ],
+      "material": "porcelain_tile",
+      "style": "daylight",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west_low",
+          "pos": [
+            768,
+            0
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "W3 - WEIR WALK",
+          "note": "foot of the east stair"
+        },
+        {
+          "id": "west_high",
+          "pos": [
+            768,
+            704
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "W3 - WEIR WALK - UP AND OVER",
+          "note": "to the upper pipe run"
+        },
+        {
+          "id": "east_low",
+          "pos": [
+            1088,
+            64
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "optional",
+          "transom": "dark_clean",
+          "plate": "INSPECTION GALLERY - NO SCHEDULE (W6, no route code)",
+          "note": "optional branch to the harvested room"
+        },
+        {
+          "id": "east_high",
+          "pos": [
+            1088,
+            512
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "optional",
+          "transom": "dark_clean",
+          "plate": "GAUGE STATION 3 - UNMANNED - LAMP BURNING (W6)",
+          "note": "optional branch to the vacant ward"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "armature_pack",
+        "sound_before_sight": true,
+        "convergence": true,
+        "notes": "The slice's three warning-led Armatures live here: glints and dark bodies in haze, ceramic tick before coordination. Long sightlines; the generator's interior baffle should sit mid-room."
+      },
+      "landmark_text": {
+        "plaque": "GAUGE GALLERY - THE FLOOR MOVES. THE GAUGE DOES NOT.",
+        "gauge": null,
+        "notice": null,
+        "graffiti": "roster scratched into paint: 06-14 RD / 14-22 RD / 22-06 RD / RELIEF NOT REQUIRED (last lines pressed harder)",
+        "wayfinding": [
+          "two lit transoms W3 steady",
+          "two dark-clean optional plates, no codes"
+        ],
+        "cues": [
+          "S (sluice rush from the run)",
+          "R (ringing pipe answers)"
+        ],
+        "vignette": "THE DRY COAT: works coat, ochre, dry, on a hook by the stair, above the line; note in the pocket: COAT KEPT DRY FOR THE NEXT SHIFT. THE NEXT SHIFT IS LATE. It does not move when the player passes."
+      },
+      "default_landmark": "LM_GALLERY_SIGNBRIDGE",
+      "notes": "Real slice gallery: 10 x 28 m daylight hall at +2. The Armature room of the slice; fog and distance are the sound-before-sight."
+    },
+    {
+      "id": "SLICE_UPPER_PIPE",
+      "template_id": "SLICE_UPPER_PIPE",
+      "tags": [
+        "corridor",
+        "tunnel"
+      ],
+      "origin": "slice:geometry_v5:upper_pipe",
+      "rarity_weight": 2.0,
+      "connector_kind": "tunnel",
+      "footprint_local_u": [
+        [
+          -256,
+          640
+        ],
+        [
+          768,
+          640
+        ],
+        [
+          768,
+          768
+        ],
+        [
+          -256,
+          768
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 160,
+      "headroom_u": 96,
+      "light_level": 80,
+      "light_band": [
+        72,
+        88
+      ],
+      "material": "cast_bronze",
+      "style": "single-practical",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            -256,
+            704
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "flicker",
+          "plate": "P2 - PUMP CHAPEL - DO NOT STOP THE PUMP",
+          "note": "flicker = contested route, enemies use it too (W2)"
+        },
+        {
+          "id": "south",
+          "pos": [
+            0,
+            640
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "B1 - BASIN STAIR",
+          "note": "the shortcut's far face: lit (W4/W17)"
+        },
+        {
+          "id": "east",
+          "pos": [
+            768,
+            704
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "W3 - WEIR WALK",
+          "note": "back to the gallery"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "The long run of the W3 weir walk. One silent stretch of 6-10 m before its exits (cue placement rule 6)."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": "NOTICE 22 - PACE PLATES. At high water add one pace per flooded step.",
+        "wayfinding": [
+          "pace plate M-W3 - 34 - LAMP 12",
+          "door gauge red ticks at the sluice"
+        ],
+        "cues": [
+          "R (ringing pipe runs the whole length on bronze clips)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_RACEWAY_SLUICE_ARCH",
+      "notes": "Real slice upper pipe: 32 m bronze pipe gallery at +2, the slice's W3 weir-walk high route."
+    },
+    {
+      "id": "SLICE_PUMP",
+      "template_id": "SLICE_PUMP",
+      "tags": [
+        "set_piece",
+        "room",
+        "junction"
+      ],
+      "origin": "slice:geometry_v5:pump",
+      "rarity_weight": 1.0,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -640,
+          640
+        ],
+        [
+          -256,
+          640
+        ],
+        [
+          -256,
+          896
+        ],
+        [
+          -640,
+          896
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 256,
+      "headroom_u": 192,
+      "light_level": 160,
+      "light_band": [
+        152,
+        168
+      ],
+      "material": "cast_bronze",
+      "style": "silhouette",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            -640,
+            704
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "D1 - DRAIN HEAD - MIND THE LINE",
+          "note": "from the pump landing / drain stair"
+        },
+        {
+          "id": "east_pipe",
+          "pos": [
+            -256,
+            704
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "W3 - WEIR WALK",
+          "note": "to the upper pipe"
+        },
+        {
+          "id": "south_gate",
+          "pos": [
+            -448,
+            896
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "dark_dust",
+          "plate": "DANGER - WATER RISES UNANNOUNCED - KEEP THE LINE",
+          "note": "the sluice gate; lit steady only after the V-07 release"
+        },
+        {
+          "id": "east_bay",
+          "pos": [
+            -256,
+            832
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "optional",
+          "transom": "none",
+          "plate": null,
+          "note": "to the pair bay; the slice's real opening is 96 u - the bay is widened 32 u north so the mouth carries a true 128 u socket"
+        }
+      ],
+      "pillars_local_xy_r": [
+        [
+          -512,
+          768,
+          20
+        ]
+      ],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "valve": {
+          "code": "V-07",
+          "wheel": "release wheel, stencil 300 mm upstream on the pipe (W10)",
+          "unlocks": "sluice",
+          "note": "operated by F when close; opens the outfall gate"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": true,
+        "notes": "The pump convergence: four sockets, the V-07 wheel is the pull. P2 thump is audible two rooms away; the rest (8 s each 96 s) is the listening window."
+      },
+      "landmark_text": {
+        "plaque": "PUMP CHAPEL - THREE FITTED - FOUR RUNNING - LOG THE EXTRA.",
+        "gauge": "door gauge at the sluice: one red tick per flood, never dated",
+        "notice": "NOTICE 60 - PUMP 4. Pump 4 is not on the plan. Do not stop it to check.",
+        "graffiti": "beam over the chapel, gouged: THE PUMP ANSWERS WHEN I SPEAK. IT HAS LEARNED MY VOICE. IT DOES NOT USE IT.",
+        "wayfinding": [
+          "valve code V-07 on the pipe, never on the wheel (W10)",
+          "P2 transom flickers"
+        ],
+        "cues": [
+          "P (pump double thump 44 bpm, valve tick gives bearing)",
+          "U (unlogged Pump 4, half a beat out of phase, never rests)"
+        ],
+        "vignette": "THE PRIVATE MIRROR: steel shaving mirror bolted to a pipe at face height, above the line; card: PRIVATE - DO NOT CLEAN - DO NOT COVER; pencil on the frame: It keeps the room. It loses me. I have stopped asking it to. Never reflects the player."
+      },
+      "default_landmark": "LM_V07_RELEASE_WHEEL",
+      "notes": "Real slice pump inspection bay at +2, the V-07 release unlocks the outfall sluice latch. The pump supplies the outfall release; P2 is the level's main listening pull."
+    },
+    {
+      "id": "SLICE_WEST_THROAT",
+      "template_id": "SLICE_WEST_THROAT",
+      "tags": [
+        "corridor"
+      ],
+      "origin": "slice:geometry_v5:west_throat",
+      "rarity_weight": 2.0,
+      "connector_kind": "corridor",
+      "footprint_local_u": [
+        [
+          -512,
+          -64
+        ],
+        [
+          -256,
+          -64
+        ],
+        [
+          -256,
+          64
+        ],
+        [
+          -512,
+          64
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 96,
+      "headroom_u": 96,
+      "light_level": 96,
+      "light_band": [
+        88,
+        104
+      ],
+      "material": "porcelain_tile",
+      "style": "sodium",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            -512,
+            0
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "S4 - SLUICE RUN - KEEP TO THE WALL",
+          "note": "to the sump"
+        },
+        {
+          "id": "east",
+          "pos": [
+            -256,
+            0
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "G1 - GAUGE GALLERY - HUB",
+          "note": "back to the hub"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Straight 8 m throat. The sluice rush (S) whistle carries around both corners."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "depth tag: DEPTH AT THE LINE 0.6 M (W8)"
+        ],
+        "cues": [
+          "S (sluice rush, low whistle = working sluice)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice west throat: the S4 water route's gateway, lamps lead uphill toward V-07."
+    },
+    {
+      "id": "SLICE_SUMP",
+      "template_id": "SLICE_SUMP",
+      "tags": [
+        "room",
+        "junction"
+      ],
+      "origin": "slice:geometry_v5:sump",
+      "rarity_weight": 1.5,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -768,
+          -128
+        ],
+        [
+          -512,
+          -128
+        ],
+        [
+          -512,
+          128
+        ],
+        [
+          -768,
+          128
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 160,
+      "headroom_u": 160,
+      "light_level": 112,
+      "light_band": [
+        104,
+        120
+      ],
+      "material": "porcelain_tile",
+      "style": "caustic",
+      "water_z_u": 16,
+      "sockets": [
+        {
+          "id": "east",
+          "pos": [
+            -512,
+            0
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "S4 - SLUICE RUN",
+          "note": "from the west throat"
+        },
+        {
+          "id": "south",
+          "pos": [
+            -704,
+            128
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "none",
+          "plate": "DEPTH 1.1 M - DO NOT CARRY THE LAMP LOW",
+          "note": "into the culvert"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "calm",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Water room; the drip (D) cue reads the volume before entry. A calm room that is never quite empty."
+      },
+      "landmark_text": {
+        "plaque": "SETTLING IS NOT STORAGE. NOTHING HERE IS WAITING.",
+        "gauge": null,
+        "notice": "NOTICE 58 - SOUNDING. Once at the start of a shift. What answers is not the floor.",
+        "wayfinding": [
+          "red tide tick on the gauge: the water has been here (W9)",
+          "depth tag measured from the level line (W8)"
+        ],
+        "cues": [
+          "D (bright plink into water: the room's volume)",
+          "S (sluice rush, faint)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_SETTLING_SKIMMER",
+      "notes": "Real slice sump: 0.55 m of water over the floor (water z 16 u), caustic light. The sounding peg lives at the third ring."
+    },
+    {
+      "id": "SLICE_CULVERT",
+      "template_id": "SLICE_CULVERT",
+      "tags": [
+        "tunnel",
+        "corridor"
+      ],
+      "origin": "slice:geometry_v5:culvert",
+      "rarity_weight": 2.0,
+      "connector_kind": "tunnel",
+      "footprint_local_u": [
+        [
+          -768,
+          128
+        ],
+        [
+          -640,
+          128
+        ],
+        [
+          -640,
+          384
+        ],
+        [
+          -768,
+          384
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 80,
+      "headroom_u": 80,
+      "light_level": 72,
+      "light_band": [
+        64,
+        80
+      ],
+      "material": "porcelain_tile",
+      "style": "pools",
+      "water_z_u": 16,
+      "sockets": [
+        {
+          "id": "south",
+          "pos": [
+            -704,
+            128
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "none",
+          "plate": null,
+          "note": "crouch entry from the sump"
+        },
+        {
+          "id": "north",
+          "pos": [
+            -704,
+            384
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "none",
+          "plate": "DEPTH 1.1 M - DO NOT CARRY THE LAMP LOW",
+          "note": "to the drain stair"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "80 u headroom forces a crouch. Low, wet, dark: the crawl that makes the tall rooms read tall."
+      },
+      "landmark_text": {
+        "plaque": "PAINTED AT LOW WATER. THE PAINTER IS STILL BELOW IT.",
+        "gauge": null,
+        "notice": null,
+        "graffiti": "above the level line, pencil on tile: CUFF BUTTONED THIS MORNING. IT IS STILL THIS MORNING.",
+        "wayfinding": [
+          "water depth tag (W8)"
+        ],
+        "cues": [
+          "D (plink ratio tells the room before entry)",
+          "S (hiss, near)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice culvert: the low crawl of the S4 run, 2.5 m tall, water at the chest. The slice's quiet-route contrast room."
+    },
+    {
+      "id": "SLICE_DRAIN_STAIR",
+      "template_id": "SLICE_DRAIN_STAIR",
+      "tags": [
+        "stair",
+        "tunnel"
+      ],
+      "origin": "slice:geometry_v5:drain_stair",
+      "rarity_weight": 1.5,
+      "connector_kind": "stair",
+      "footprint_local_u": [
+        [
+          -768,
+          384
+        ],
+        [
+          -640,
+          384
+        ],
+        [
+          -640,
+          640
+        ],
+        [
+          -768,
+          640
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 192,
+      "headroom_u": 128,
+      "light_level": 96,
+      "light_band": [
+        88,
+        104
+      ],
+      "material": "weathered_brick",
+      "style": "caustic",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "south",
+          "pos": [
+            -704,
+            384
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "ceiling_z_u": 136,
+          "role": "entry",
+          "transom": "none",
+          "plate": null,
+          "note": "out of the culvert; first riser (0 -> 8 u) at the threshold"
+        },
+        {
+          "id": "north",
+          "pos": [
+            -704,
+            640
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "ceiling_z_u": 192,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "D1 - DRAIN HEAD - MIND THE LINE",
+          "note": "up to the pump landing; landing gauge at the top (W7)"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [
+        {
+          "from_socket": "south",
+          "to_socket": "north",
+          "risers": 8,
+          "rise_per_riser_u": 8,
+          "tread_u": 32,
+          "note": "wet shaft: a gurgle at the bottom (W cue)"
+        }
+      ],
+      "vertical_links": [
+        {
+          "kind": "stair",
+          "from_socket": "south",
+          "to_socket": "north",
+          "delta_z_u": 64
+        }
+      ],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Vertical connection: sound arrives from the landing above before sight."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "chevron +2 LEVEL relative to Works Zero (W7)"
+        ],
+        "cues": [
+          "W (wet shaft tone: a wet shaft is a dead end below it)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice drain stair: 8 risers of 8 u, the D1 vertical from the culvert to the pump landing."
+    },
+    {
+      "id": "SLICE_PUMP_LANDING",
+      "template_id": "SLICE_PUMP_LANDING",
+      "tags": [
+        "junction",
+        "room"
+      ],
+      "origin": "slice:geometry_v5:pump_landing",
+      "rarity_weight": 1.5,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -768,
+          640
+        ],
+        [
+          -640,
+          640
+        ],
+        [
+          -640,
+          768
+        ],
+        [
+          -768,
+          768
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 192,
+      "headroom_u": 128,
+      "light_level": 144,
+      "light_band": [
+        136,
+        152
+      ],
+      "material": "porcelain_tile",
+      "style": "daylight",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "south",
+          "pos": [
+            -704,
+            640
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "D1 - DRAIN HEAD - MIND THE LINE",
+          "note": "head of the drain stair"
+        },
+        {
+          "id": "east",
+          "pos": [
+            -640,
+            704
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "P2 - PUMP CHAPEL - DO NOT STOP THE PUMP",
+          "note": "into the pump bay"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Turn landing; the pump's tick (P) gives the bearing through the wall."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "gauge height at the landing (W7)"
+        ],
+        "cues": [
+          "P (pump tick, through the wall)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice landing joining the pump via its west side."
+    },
+    {
+      "id": "SLICE_SHORTCUT_GATE",
+      "template_id": "SLICE_SHORTCUT_GATE",
+      "tags": [
+        "junction",
+        "corridor"
+      ],
+      "origin": "slice:geometry_v5:shortcut_gate",
+      "rarity_weight": 1.0,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -64,
+          256
+        ],
+        [
+          64,
+          256
+        ],
+        [
+          64,
+          288
+        ],
+        [
+          -64,
+          288
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 80,
+      "headroom_u": 80,
+      "light_level": 152,
+      "light_band": [
+        144,
+        160
+      ],
+      "material": "cast_bronze",
+      "style": "warm",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "north",
+          "pos": [
+            0,
+            256
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "dark_dust",
+          "plate": "DOOR OPENS FROM THE FAR SIDE - NOT FROM HERE",
+          "note": "near face; the far transom is lit and visible through the gap (W4/W17)"
+        },
+        {
+          "id": "south",
+          "pos": [
+            0,
+            288
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "none",
+          "plate": null,
+          "note": "to the shortcut foot (the far-side release)"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "shortcut": {
+          "latch": "shortcut",
+          "locked_from": "north",
+          "unlocked_from": "SLICE_SHORTCUT_FOOT",
+          "near_plate": "DOOR OPENS FROM THE FAR SIDE - NOT FROM HERE",
+          "far_transom": "lit",
+          "note": "water moves on the far side: near side silent, far rush low-passed through the door"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "The latch gate. The far-side rush through the door is the pull; its change when opened is the reward."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": "door gauge: three red ticks - been under three times, the schedule records one",
+        "notice": null,
+        "wayfinding": [
+          "near plate tells a route exists that cannot be used yet (W4)"
+        ],
+        "cues": [
+          "S (far-side rush, low-passed and slightly late)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice shortcut gate (tag 2101, latch 'shortcut'). The B1 basin stair of the sign system."
+    },
+    {
+      "id": "SLICE_SHORTCUT_FOOT",
+      "template_id": "SLICE_SHORTCUT_FOOT",
+      "tags": [
+        "junction",
+        "room"
+      ],
+      "origin": "slice:geometry_v5:shortcut_foot",
+      "rarity_weight": 1.0,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -64,
+          288
+        ],
+        [
+          64,
+          288
+        ],
+        [
+          64,
+          320
+        ],
+        [
+          -64,
+          320
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 112,
+      "headroom_u": 112,
+      "light_level": 96,
+      "light_band": [
+        88,
+        104
+      ],
+      "material": "porcelain_tile",
+      "style": "pools",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "north",
+          "pos": [
+            0,
+            288
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "none",
+          "plate": null,
+          "note": "behind the latch gate"
+        },
+        {
+          "id": "south",
+          "pos": [
+            0,
+            320
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "none",
+          "plate": null,
+          "note": "foot of the return stair"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "shortcut": {
+          "unlocks": "shortcut",
+          "release": "far-side foot handle",
+          "note": "standing here operates the release; persistent across return visits"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Reward room: opening the shortcut changes the near room's tail (the change is the reward)."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "far face plate: it is open from here"
+        ],
+        "cues": [
+          "S (full-band rush through the open door)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice shortcut foot: unlocks the 'shortcut' latch in the routing proof."
+    },
+    {
+      "id": "SLICE_RETURN_STAIR",
+      "template_id": "SLICE_RETURN_STAIR",
+      "tags": [
+        "stair",
+        "corridor"
+      ],
+      "origin": "slice:geometry_v5:return_stair",
+      "rarity_weight": 1.5,
+      "connector_kind": "stair",
+      "footprint_local_u": [
+        [
+          -64,
+          320
+        ],
+        [
+          64,
+          320
+        ],
+        [
+          64,
+          576
+        ],
+        [
+          -64,
+          576
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 176,
+      "headroom_u": 112,
+      "light_level": 96,
+      "light_band": [
+        88,
+        104
+      ],
+      "material": "weathered_brick",
+      "style": "pools",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "north",
+          "pos": [
+            0,
+            320
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "ceiling_z_u": 120,
+          "role": "entry",
+          "transom": "none",
+          "plate": null,
+          "note": "from the shortcut foot; first riser (0 -> 8 u) at the threshold"
+        },
+        {
+          "id": "south",
+          "pos": [
+            0,
+            576
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "ceiling_z_u": 176,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "B1 - BASIN STAIR",
+          "note": "the shortcut's lit far transom reads through the gap from the hub (W17)"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [
+        {
+          "from_socket": "north",
+          "to_socket": "south",
+          "risers": 8,
+          "rise_per_riser_u": 8,
+          "tread_u": 32,
+          "note": "return stair behind the far-side latch"
+        }
+      ],
+      "vertical_links": [
+        {
+          "kind": "stair",
+          "from_socket": "north",
+          "to_socket": "south",
+          "delta_z_u": 64
+        }
+      ],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "The loop-maker: closing the shortcut turns the level cyclic."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "chevron +2 LEVEL (W7)"
+        ],
+        "cues": [
+          "F (far door clang, heard twice = the same door)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice return stair: the upper loop's way back to the hub, 8 risers of 8 u."
+    },
+    {
+      "id": "SLICE_SHORTCUT_HEAD",
+      "template_id": "SLICE_SHORTCUT_HEAD",
+      "tags": [
+        "junction",
+        "room"
+      ],
+      "origin": "slice:geometry_v5:shortcut_head",
+      "rarity_weight": 1.0,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -64,
+          576
+        ],
+        [
+          64,
+          576
+        ],
+        [
+          64,
+          640
+        ],
+        [
+          -64,
+          640
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 176,
+      "headroom_u": 112,
+      "light_level": 144,
+      "light_band": [
+        136,
+        152
+      ],
+      "material": "cast_bronze",
+      "style": "silhouette",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "north",
+          "pos": [
+            0,
+            576
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "none",
+          "plate": null,
+          "note": "top of the return stair"
+        },
+        {
+          "id": "south",
+          "pos": [
+            0,
+            640
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "B1 - BASIN STAIR",
+          "note": "the far transom is the lit one (W4)"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "shortcut": {
+          "far_side": "reopen handle",
+          "note": "the shortcut re-opens here from above"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "The lit far transom is visible before the near plate is readable (W17)."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "far face plate: B1 - BASIN STAIR"
+        ],
+        "cues": [
+          "T (transom hum, through the gap)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice shortcut head at +2, meeting the upper pipe run."
+    },
+    {
+      "id": "SLICE_HARVEST_VESTIBULE",
+      "template_id": "SLICE_HARVEST_VESTIBULE",
+      "tags": [
+        "corridor"
+      ],
+      "origin": "slice:geometry_v5:harvest_vestibule",
+      "rarity_weight": 1.2,
+      "connector_kind": "corridor",
+      "footprint_local_u": [
+        [
+          1088,
+          0
+        ],
+        [
+          1152,
+          0
+        ],
+        [
+          1152,
+          128
+        ],
+        [
+          1088,
+          128
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 144,
+      "headroom_u": 80,
+      "light_level": 128,
+      "light_band": [
+        120,
+        136
+      ],
+      "material": "poured_concrete",
+      "style": "silhouette",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            1088,
+            64
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "dark_clean",
+          "plate": "INSPECTION GALLERY - NO SCHEDULE (W6)",
+          "note": "optional branch, no route code"
+        },
+        {
+          "id": "east",
+          "pos": [
+            1152,
+            64
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "optional",
+          "transom": "none",
+          "plate": null,
+          "note": "threshold to the harvested room"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "portal_anchor": {
+          "kind": "rotated_portal",
+          "note": "candidate anchor for the generator's Cycle-3 rotated portal: the harvested room beyond does not line up with the works' numbering; the threshold may be emitted as a ROTATED_PORTAL edge"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Optional, quiet. The harvested room beyond is never a required route."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "department plate only: the absence of a code is the signal (W6)"
+        ],
+        "cues": [
+          "X (dead ballast tick if the transom is off)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice vestibule to the harvested Freedoom chunk; narrow (80 u headroom) so the big room beyond reads big."
+    },
+    {
+      "id": "SLICE_WARD_VESTIBULE",
+      "template_id": "SLICE_WARD_VESTIBULE",
+      "tags": [
+        "corridor"
+      ],
+      "origin": "slice:geometry_v5:ward_vestibule",
+      "rarity_weight": 1.5,
+      "connector_kind": "corridor",
+      "footprint_local_u": [
+        [
+          1088,
+          448
+        ],
+        [
+          1152,
+          448
+        ],
+        [
+          1152,
+          576
+        ],
+        [
+          1088,
+          576
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 144,
+      "headroom_u": 80,
+      "light_level": 112,
+      "light_band": [
+        104,
+        120
+      ],
+      "material": "poured_concrete",
+      "style": "warm",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            1088,
+            512
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "dark_clean",
+          "plate": "GAUGE STATION 3 - UNMANNED - LAMP BURNING (W6)",
+          "note": "optional branch"
+        },
+        {
+          "id": "east",
+          "pos": [
+            1152,
+            512
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "optional",
+          "transom": "none",
+          "plate": null,
+          "note": "into the vacant ward"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Optional branch off the maintained route."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "no route code: optional (W6)"
+        ],
+        "cues": null,
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice vestibule to the optional ward."
+    },
+    {
+      "id": "SLICE_OPTIONAL_WARD",
+      "template_id": "SLICE_OPTIONAL_WARD",
+      "tags": [
+        "room",
+        "dead-end"
+      ],
+      "origin": "slice:geometry_v5:optional_ward",
+      "rarity_weight": 1.5,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          1152,
+          384
+        ],
+        [
+          1440,
+          384
+        ],
+        [
+          1440,
+          640
+        ],
+        [
+          1152,
+          640
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 208,
+      "headroom_u": 144,
+      "light_level": 160,
+      "light_band": [
+        152,
+        168
+      ],
+      "material": "porcelain_tile",
+      "style": "daylight",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            1152,
+            512
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "dark_clean",
+          "plate": "GAUGE STATION 3 - UNMANNED - LAMP BURNING",
+          "note": "single socket: dead end"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "calm",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Optional dead end. A dim courtesy lamp, never a transom (W5); no exit cue, only room tone."
+      },
+      "landmark_text": {
+        "plaque": "THE STAIR WAS REMOVED FOR THE WATER. THE SOCKETS REMAIN.",
+        "gauge": null,
+        "notice": "NOTICE 44 - TRANSOM LAMPS. Replaced on the first of the month. The first of the month is not a fixed date.",
+        "wayfinding": [
+          "department plate only",
+          "Descent Works double-line arrows point at sockets where the stair hung"
+        ],
+        "cues": [
+          "D (room drip only - the absence of an exit cue is the sign)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_OVERLOOK_WINDOW",
+      "notes": "Real slice optional ward off the gallery. Vacant, daylight, quietly wrong. Never a required route."
+    },
+    {
+      "id": "SLICE_EXIT_GATE",
+      "template_id": "SLICE_EXIT_GATE",
+      "tags": [
+        "junction",
+        "corridor"
+      ],
+      "origin": "slice:geometry_v5:exit_gate",
+      "rarity_weight": 1.0,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -512,
+          896
+        ],
+        [
+          -384,
+          896
+        ],
+        [
+          -384,
+          992
+        ],
+        [
+          -512,
+          992
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 144,
+      "headroom_u": 80,
+      "light_level": 160,
+      "light_band": [
+        152,
+        168
+      ],
+      "material": "cast_bronze",
+      "style": "warm",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "north",
+          "pos": [
+            -448,
+            896
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "dark_dust",
+          "plate": "DANGER - WATER RISES UNANNOUNCED - KEEP THE LINE",
+          "note": "the sluice; closed until the V-07 release"
+        },
+        {
+          "id": "south",
+          "pos": [
+            -448,
+            992
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "L1 - LIGHTWELL FOOT - FOLLOW THE RINGING",
+          "note": "the outfall, lit once the gate stands open"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "gate": {
+          "latch": "sluice",
+          "requires_valve": "V-07",
+          "note": "native door barrier; the outfall exit handle is physically beyond it"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "The final gate. The whistle climbs as it is wound shut; cut-out becomes the drip (D)."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": "door gauge at the sluice foot: red ticks, never dated (a door with three ticks has been under three times)",
+        "notice": null,
+        "wayfinding": [
+          "sluice number cast into the frame, upstream face (S1 = Works Zero datum)"
+        ],
+        "cues": [
+          "S (high whistle = a door nearly shut)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice exit gate (tag 2102, latch 'sluice'). The release and the gate it opens are adjacent and visible together."
+    },
+    {
+      "id": "SLICE_EXIT_OUTFALL",
+      "template_id": "SLICE_EXIT_OUTFALL",
+      "tags": [
+        "set_piece",
+        "room",
+        "dead-end"
+      ],
+      "origin": "slice:geometry_v5:exit",
+      "rarity_weight": 1.0,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -544,
+          992
+        ],
+        [
+          -352,
+          992
+        ],
+        [
+          -352,
+          1248
+        ],
+        [
+          -544,
+          1248
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 224,
+      "headroom_u": 160,
+      "light_level": 208,
+      "light_band": [
+        200,
+        208
+      ],
+      "material": "weathered_brick",
+      "style": "daylight",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "north",
+          "pos": [
+            -448,
+            992
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "L1 - LIGHTWELL FOOT - FOLLOW THE RINGING",
+          "note": "through the opened sluice"
+        },
+        {
+          "id": "south",
+          "pos": [
+            -448,
+            1248
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "L1 - LIGHTWELL FOOT",
+          "note": "the outfall mouth: level exit, bright daylight passage"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "valve": {
+          "code": null,
+          "wheel": "outfall release wheel",
+          "note": "the exit handle calls native Exit_Normal; the end card is beyond the gate"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Finale. The bright passage is the pull; no creature shares it."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "the brightest room in the stratum: light as the exit sign"
+        ],
+        "cues": [
+          "L (lightwell surge, faint)",
+          "H2 (second bell, down: the outfall drops toward the lightwell foot)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_OUTFALL_SLUICE_WHEEL",
+      "notes": "Real slice outfall exit: the actual end card sits beyond the release handle. Brightest room (208)."
+    },
+    {
+      "id": "SLICE_PAIR_BAY",
+      "template_id": "SLICE_PAIR_BAY",
+      "tags": [
+        "set_piece",
+        "room",
+        "junction"
+      ],
+      "origin": "slice:geometry_v5:pair_bay",
+      "rarity_weight": 1.0,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -256,
+          768
+        ],
+        [
+          128,
+          768
+        ],
+        [
+          128,
+          1056
+        ],
+        [
+          -256,
+          1056
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 256,
+      "headroom_u": 192,
+      "light_level": 116,
+      "light_band": [
+        108,
+        124
+      ],
+      "material": "porcelain_tile",
+      "style": "underwater",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            -256,
+            832
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "none",
+          "plate": null,
+          "note": "from the pump; the slice's real mouth is 96 u - the bay extends 32 u north (to the upper pipe run) so this socket is a true 128"
+        },
+        {
+          "id": "north",
+          "pos": [
+            0,
+            768
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "flicker",
+          "plate": null,
+          "note": "meets the upper pipe run's wall; flicker = contested (W2)"
+        },
+        {
+          "id": "east",
+          "pos": [
+            128,
+            832
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "dark_clean",
+          "plate": null,
+          "note": "toward the outfall approach (declared; not in the slice)"
+        }
+      ],
+      "pillars_local_xy_r": [
+        [
+          -64,
+          928,
+          24
+        ],
+        [
+          64,
+          928,
+          24
+        ]
+      ],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "hollow_redead_bay",
+        "sound_before_sight": false,
+        "convergence": true,
+        "notes": "THE HOLLOW AND THE STONE REDEAD ALWAYS SPAWN TOGETHER (PILLARS 5). The ReDead walks and reaches, grips hard, shrieks when its mask is lifted; it keeps the player busy while the Hollow comes alive. Room to retreat (the slice's pair fight was survivable when the player kept moving). Fog thickens and practicals fade as the pair alerts; never strobe."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": "door gauge ticks at the bay mouth: the water has been this high",
+        "notice": null,
+        "graffiti": null,
+        "wayfinding": [
+          "depth tag only: DEPTH AT THE LINE 0.6 M - keep the bay text-poor"
+        ],
+        "cues": [
+          "Q (the stop: the pump rests and the room's tail lengthens before the pair moves)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "Real slice pair bay at the pump convergence (underwater light, 12 x 9 m). Widened 32 u north of the slice so the pump mouth is a true 128 u socket; its north wall then meets the upper pipe run. Must sit at a convergence: 3 sockets. The Hollow begins crawling ~3 s after alert; the ReDead snare releases 4 ticks after it catches."
+    },
+    {
+      "id": "HARV_FREEDOOM_E2M5_S0087",
+      "template_id": "HARV_FREEDOOM_E2M5_S0087",
+      "tags": [
+        "harvested",
+        "set_piece",
+        "room",
+        "junction"
+      ],
+      "origin": "harvest:freedoom1-E2M5-s0087 (sectors 87,137,139,140,141,142,350)",
+      "rarity_weight": 1.0,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          64,
+          0
+        ],
+        [
+          80,
+          0
+        ],
+        [
+          176,
+          0
+        ],
+        [
+          208,
+          0
+        ],
+        [
+          304,
+          0
+        ],
+        [
+          320,
+          0
+        ],
+        [
+          320,
+          80
+        ],
+        [
+          336,
+          80
+        ],
+        [
+          336,
+          176
+        ],
+        [
+          320,
+          176
+        ],
+        [
+          320,
+          256
+        ],
+        [
+          256,
+          256
+        ],
+        [
+          128,
+          256
+        ],
+        [
+          64,
+          256
+        ],
+        [
+          0,
+          256
+        ],
+        [
+          0,
+          192
+        ],
+        [
+          0,
+          64
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 192,
+      "headroom_u": 192,
+      "light_level": 136,
+      "light_band": [
+        128,
+        144
+      ],
+      "material": "porcelain_tile",
+      "style": "cold-strip",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            0,
+            128
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "none",
+          "plate": null,
+          "note": "the slice's real seam socket (provenance line 4); retextured NRLIME and raised +64 u when attached to the gallery"
+        },
+        {
+          "id": "north",
+          "pos": [
+            192,
+            256
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "optional",
+          "transom": "none",
+          "plate": null,
+          "note": "provenance line 8; usable second socket, sealed in the slice"
+        }
+      ],
+      "pillars_local_xy_r": [
+        [
+          328,
+          112,
+          5
+        ],
+        [
+          328,
+          144,
+          5
+        ]
+      ],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "calm",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Optional exploration; loop-cluster feel. Never a required route; never an encounter home."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "graffiti": null,
+        "wayfinding": [
+          "no route code: optional (W6)",
+          "department plate at the vestibule, not here"
+        ],
+        "cues": [
+          "D (drip reads the loop's volume)",
+          "silence: no exit cue in this room"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_HARVESTED_TURBINE",
+      "notes": "Real harvested Freedoom chunk (freedoom1 E2M5, 336 x 256 u, loop cluster). Footprint from the source UDMF union of the seven sectors; the two 8x8 pillar sectors become 5 u pillars. Socket floors and ceilings are the source's; the slice attaches it at +64 u. Outer walls are one-sided; the two <128 u candidate sockets from the provenance are deliberately excluded."
+    },
+    {
+      "id": "SETP_V07_VALVE_HALL",
+      "template_id": "SETP_V07_VALVE_HALL",
+      "tags": [
+        "set_piece",
+        "room",
+        "junction"
+      ],
+      "origin": "authored:new",
+      "rarity_weight": 1.2,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -176,
+          -176
+        ],
+        [
+          176,
+          -176
+        ],
+        [
+          176,
+          176
+        ],
+        [
+          -176,
+          176
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 160,
+      "headroom_u": 160,
+      "light_level": 156,
+      "light_band": [
+        148,
+        164
+      ],
+      "material": "weathered_brick",
+      "style": "silhouette",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            -176,
+            0
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "S4 - SLUICE RUN",
+          "note": "the maintained run"
+        },
+        {
+          "id": "north",
+          "pos": [
+            0,
+            -176
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "S4 - SLUICE RUN",
+          "note": "onward along the run"
+        },
+        {
+          "id": "south",
+          "pos": [
+            0,
+            176
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "flicker",
+          "plate": "P2 - PUMP CHAPEL",
+          "note": "contested branch (W2)"
+        }
+      ],
+      "pillars_local_xy_r": [
+        [
+          0,
+          64,
+          16
+        ]
+      ],
+      "baffle_local_seg": [
+        [
+          -96,
+          32
+        ],
+        [
+          96,
+          32
+        ]
+      ],
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "valve": {
+          "code": "V-07",
+          "wheel": "release wheel behind the manifold wall",
+          "unlocks": "sluice",
+          "note": "the wheel draws the player past the manifold; the tick is heard before the pack is seen"
+        }
+      },
+      "encounter": {
+        "suitability": "armature_ambush",
+        "sound_before_sight": true,
+        "convergence": true,
+        "notes": "Canonical ambush room: the manifold wall blocks the sightline from the door; the ceramic tick-tick-tick arrives first (PILLARS 5), then the coordinated windups. Practical lights fade one by one; never strobe faster than ~2 Hz."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": "LEVEL GAUGE - WORKS ZERO AT SLUICE 1 - READ DAILY",
+        "notice": "NOTICE 47 - SLUICE 9. The wheel turns. The door does not. It is not stuck; it is agreed.",
+        "wayfinding": [
+          "valve code V-07 on the pipe, 300 mm upstream (W10)",
+          "pace plate M-S4 - 22 - LAMP 12"
+        ],
+        "cues": [
+          "S (sluice rush, low whistle)",
+          "F (far door clang)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_PRESSURE_MANIFOLD",
+      "notes": "New set piece in the slice vocabulary: the valve room the loop exists to reach. 11 x 11 m."
+    },
+    {
+      "id": "SETP_TIDAL_LIGHTWELL",
+      "template_id": "SETP_TIDAL_LIGHTWELL",
+      "tags": [
+        "set_piece",
+        "room",
+        "junction"
+      ],
+      "origin": "authored:new",
+      "rarity_weight": 1.0,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -192,
+          -224
+        ],
+        [
+          192,
+          -224
+        ],
+        [
+          192,
+          224
+        ],
+        [
+          -192,
+          224
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 448,
+      "headroom_u": 448,
+      "light_level": 150,
+      "light_band": [
+        142,
+        158
+      ],
+      "material": "cast_bronze",
+      "style": "caustic",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "south",
+          "pos": [
+            0,
+            224
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "L2 - TIDAL LIGHTWELL - -1 LEVEL",
+          "note": "down from the works (W7 datum)"
+        },
+        {
+          "id": "north",
+          "pos": [
+            0,
+            -224
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "D1 - DRAIN HEAD",
+          "note": "the shaft up; H1 arrives from above"
+        },
+        {
+          "id": "west",
+          "pos": [
+            -192,
+            0
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "dark_clean",
+          "plate": "P2 - PUMP CHAPEL",
+          "note": "side branch, dark-clean"
+        }
+      ],
+      "pillars_local_xy_r": [
+        [
+          0,
+          0,
+          40
+        ]
+      ],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "valve": {
+          "code": null,
+          "wheel": null,
+          "note": "no valve: the well itself is the mechanism; the surge cycle is the clock"
+        }
+      },
+      "encounter": {
+        "suitability": "hollow_redead_bay",
+        "sound_before_sight": true,
+        "convergence": true,
+        "notes": "Alternate Hollow/ReDead home (one per seed). The ninety-second surge (L cue) masks the Hollow's crawl; the second bell and the surge coincide on the hour - that coincidence is the set piece's downbeat, not music."
+      },
+      "landmark_text": {
+        "plaque": "LIGHTWELL - TIDAL - THE COLUMN IS NOT A CLOCK.",
+        "gauge": "tide board: sliders, a chalk line, a written prediction. The prediction is for yesterday. The tide does not use the board.",
+        "notice": null,
+        "graffiti": null,
+        "wayfinding": [
+          "chevron -1 LEVEL (W7)",
+          "red tide tick on the gauge: the water has been here (W9)"
+        ],
+        "cues": [
+          "L (lightwell surge: boom then shimmer)",
+          "H2 (second bell, down: the delay is the depth)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_TIDAL_COLUMN",
+      "notes": "New L2 set piece: 12 x 14 m well, 14 m tall, the central column with the tide board. The convergence the pair bay needs."
+    },
+    {
+      "id": "SETP_WEIR_WALK",
+      "template_id": "SETP_WEIR_WALK",
+      "tags": [
+        "set_piece",
+        "corridor",
+        "room"
+      ],
+      "origin": "authored:new",
+      "rarity_weight": 1.1,
+      "connector_kind": "corridor",
+      "footprint_local_u": [
+        [
+          -128,
+          -224
+        ],
+        [
+          128,
+          -224
+        ],
+        [
+          128,
+          224
+        ],
+        [
+          -128,
+          224
+        ]
+      ],
+      "floor_z_u": 64,
+      "ceiling_z_u": 192,
+      "headroom_u": 128,
+      "light_level": 140,
+      "light_band": [
+        132,
+        148
+      ],
+      "material": "porcelain_tile",
+      "style": "daylight",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "south",
+          "pos": [
+            0,
+            224
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "W3 - WEIR WALK - UP AND OVER",
+          "note": "the high route"
+        },
+        {
+          "id": "north",
+          "pos": [
+            0,
+            -224
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "W3 - WEIR WALK",
+          "note": "onward, up and over"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": [
+        [
+          -64,
+          -176
+        ],
+        [
+          -64,
+          176
+        ]
+      ],
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "gate": {
+          "kind": "weir_sluice",
+          "openable": true,
+          "note": "the crest gate stands a hand's width open: low whistle, steady hiss, a slap every four seconds over the crest"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "The high walk beside the crest. The whistle's pitch is a door state: low = working, high = nearly shut."
+      },
+      "landmark_text": {
+        "plaque": "THE STAIR WAS REMOVED FOR THE WATER. THE SOCKETS REMAIN.",
+        "gauge": null,
+        "notice": "NOTICE 52 - PACE PLATES. Measured at low water.",
+        "wayfinding": [
+          "pace plate M-W3 - 34 - LAMP 12",
+          "Descent Works double-line arrows point at the sockets where the stair hung"
+        ],
+        "cues": [
+          "S (weir slap every four seconds)",
+          "H1 (hour bell, above)",
+          "R (ringing pipe answers)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_WEIR_CREST_GATE",
+      "notes": "New W3 set piece in the slice's vocabulary: the walkway beside the crest, water on one side, 4 m above the line."
+    },
+    {
+      "id": "SETP_STORES_ALCOVE",
+      "template_id": "SETP_STORES_ALCOVE",
+      "tags": [
+        "room",
+        "dead-end",
+        "set_piece"
+      ],
+      "origin": "authored:new",
+      "rarity_weight": 1.5,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -80,
+          -64
+        ],
+        [
+          80,
+          -64
+        ],
+        [
+          80,
+          64
+        ],
+        [
+          -80,
+          64
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 96,
+      "headroom_u": 96,
+      "light_level": 130,
+      "light_band": [
+        122,
+        138
+      ],
+      "material": "weathered_brick",
+      "style": "warm",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "west",
+          "pos": [
+            -80,
+            0
+          ],
+          "normal_deg": 180,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "dark_clean",
+          "plate": null,
+          "note": "the dark-clean plate that teaches the fourth transom state (W2)"
+        }
+      ],
+      "pillars_local_xy_r": [
+        [
+          0,
+          32,
+          16
+        ],
+        [
+          0,
+          -16,
+          8
+        ]
+      ],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "calm",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "One-object room. The tin never opens; if it can be carried it is the heaviest object of its size in the level."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": "NOTICE 63 - TRANSFER. Staff below the line keep their own lamps. Stores will not issue a second.",
+        "wayfinding": [
+          "no route code: optional (W6)",
+          "shelf label: TIN - SEALED - 1 - CONTENTS NOT RECORDED - DO NOT ISSUE"
+        ],
+        "cues": [
+          "D (drip; the room's only tone)"
+        ],
+        "vignette": "THE UNOPENED TIN: tall biscuit tin, 180 mm, solder-sealed, on a shelf above the line between two empty brackets; pencil on the lid: Heavier than it was. Not opened. Kept closed for the assessor. The shelf label stays behind."
+      },
+      "default_landmark": "LM_UNOPENED_TIN",
+      "notes": "New optional dead end carrying the Unopened Tin vignette; plinth and shelf are physical surfaces, nothing floats."
+    },
+    {
+      "id": "CORR_DOGLEG_DUCT",
+      "template_id": "CORR_DOGLEG_DUCT",
+      "tags": [
+        "corridor",
+        "tunnel"
+      ],
+      "origin": "authored:new",
+      "rarity_weight": 2.5,
+      "connector_kind": "dogleg",
+      "footprint_local_u": [
+        [
+          -160,
+          -64
+        ],
+        [
+          160,
+          -64
+        ],
+        [
+          160,
+          64
+        ],
+        [
+          -32,
+          64
+        ],
+        [
+          -32,
+          224
+        ],
+        [
+          -160,
+          224
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 128,
+      "headroom_u": 128,
+      "light_level": 104,
+      "light_band": [
+        96,
+        112
+      ],
+      "material": "rusted_grating",
+      "style": "single-practical",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "east",
+          "pos": [
+            160,
+            0
+          ],
+          "normal_deg": 0,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "steady",
+          "plate": "S4 - SLUICE RUN",
+          "note": "straight leg in"
+        },
+        {
+          "id": "south",
+          "pos": [
+            -96,
+            224
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "S4 - SLUICE RUN",
+          "note": "the bend leg out"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": [
+        [
+          -32,
+          64
+        ],
+        [
+          -32,
+          192
+        ]
+      ],
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "armature_ambush",
+        "sound_before_sight": true,
+        "convergence": false,
+        "notes": "THE ambush corridor: the bend blocks the sightline, the ceramic tick diffracts around it first (sound before sight, PILLARS 5). Free Armatures read stiff and slow until they coordinate: synchronised windups, flanking, cutting off the retreat. The tick is the panic trigger and the fair warning at once."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "pace plate at the bend: the plate is accurate, the route is longer"
+        ],
+        "cues": [
+          "R (ringing pipe answers from the next plate)",
+          "X (dead ballast tick: a route not maintained)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "New dogleg connector: 10 x 8 m L-bend with the generator's sound-before-sight baffle. The workhorse connector; rarity high so bends recur but never twice in a window."
+    },
+    {
+      "id": "STAIR_SPIRAL_WELL",
+      "template_id": "STAIR_SPIRAL_WELL",
+      "tags": [
+        "stair",
+        "room"
+      ],
+      "origin": "authored:new",
+      "rarity_weight": 1.8,
+      "connector_kind": "stair",
+      "footprint_local_u": [
+        [
+          -128,
+          -128
+        ],
+        [
+          128,
+          -128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          -128,
+          128
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 192,
+      "headroom_u": 128,
+      "light_level": 138,
+      "light_band": [
+        130,
+        146
+      ],
+      "material": "limestone_dry",
+      "style": "sodium",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "north",
+          "pos": [
+            0,
+            -128
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "none",
+          "plate": "chevron +2 LEVEL (W7)",
+          "note": "bottom, from the lower route"
+        },
+        {
+          "id": "south",
+          "pos": [
+            0,
+            128
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "W3 - WEIR WALK",
+          "note": "top; landing gauge at the top (W7)"
+        }
+      ],
+      "pillars_local_xy_r": [
+        [
+          0,
+          0,
+          16
+        ]
+      ],
+      "baffle_local_seg": null,
+      "stairs": [
+        {
+          "from_socket": "north",
+          "to_socket": "south",
+          "risers": 8,
+          "rise_per_riser_u": 8,
+          "tread_u": 32,
+          "note": "two flights around the lantern pillar with a mid landing"
+        }
+      ],
+      "vertical_links": [
+        {
+          "kind": "stair",
+          "from_socket": "north",
+          "to_socket": "south",
+          "delta_z_u": 64
+        }
+      ],
+      "mechanisms": {},
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "Vertical connector: sound arrives from the landing above before sight; the central pillar hides the top flight."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "chevron +2 LEVEL relative to Works Zero (W7)"
+        ],
+        "cues": [
+          "W (dry shaft tone: up is a rise in pitch as you climb)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_SPIRAL_LANTERN",
+      "notes": "New stairwell: 8 x 8 m, two flights of four 8 u risers around the lantern pillar, z 0 -> 64."
+    },
+    {
+      "id": "LIFT_DRY_SHAFT",
+      "template_id": "LIFT_DRY_SHAFT",
+      "tags": [
+        "stair",
+        "tunnel"
+      ],
+      "origin": "authored:new",
+      "rarity_weight": 1.5,
+      "connector_kind": "lift_shaft",
+      "footprint_local_u": [
+        [
+          -64,
+          -128
+        ],
+        [
+          64,
+          -128
+        ],
+        [
+          64,
+          128
+        ],
+        [
+          -64,
+          128
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 160,
+      "headroom_u": 160,
+      "light_level": 120,
+      "light_band": [
+        112,
+        128
+      ],
+      "material": "rusted_grating",
+      "style": "cold-strip",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "south",
+          "pos": [
+            0,
+            128
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "entry",
+          "transom": "none",
+          "plate": "chevron +2 LEVEL (W7)",
+          "note": "bottom cage gate"
+        },
+        {
+          "id": "north",
+          "pos": [
+            0,
+            -128
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "exit",
+          "transom": "steady",
+          "plate": "D1 - DRAIN HEAD",
+          "note": "top landing; gauge at the top (W7)"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [
+        {
+          "kind": "lift",
+          "from_socket": "south",
+          "to_socket": "north",
+          "delta_z_u": 64,
+          "note": "callable from both ends, unlimited reuse (routing assumption)"
+        }
+      ],
+      "mechanisms": {
+        "lift": {
+          "from_socket": "south",
+          "to_socket": "north",
+          "reuse": "unlimited",
+          "note": "the cage is physical: gates, cables, a sheave that reads as maintained"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "The lift is loud: the cage announces its own arrival. Never silent-drop the player."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": "NOTICE 44 - TRANSOM LAMPS. Replaced on the first of the month. The first of the month is not a fixed date.",
+        "wayfinding": [
+          "chevron +2 LEVEL (W7)"
+        ],
+        "cues": [
+          "W (dry shaft standing-wave tone: pitch is the shaft's length)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_HOIST_CABLE_SHEAVE",
+      "notes": "New lift shaft: 4 x 8 m dry shaft, z 0 -> 64. Tags use 'stair' as the vertical tag; the mechanism is the lift."
+    },
+    {
+      "id": "DROP_FLUME_SHAFT",
+      "template_id": "DROP_FLUME_SHAFT",
+      "tags": [
+        "tunnel"
+      ],
+      "origin": "authored:new",
+      "rarity_weight": 1.5,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -64,
+          -128
+        ],
+        [
+          64,
+          -128
+        ],
+        [
+          64,
+          128
+        ],
+        [
+          -64,
+          128
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 128,
+      "headroom_u": 128,
+      "light_level": 100,
+      "light_band": [
+        92,
+        108
+      ],
+      "material": "poured_concrete",
+      "style": "pools",
+      "water_z_u": 16,
+      "sockets": [
+        {
+          "id": "north",
+          "pos": [
+            0,
+            -128
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 64,
+          "role": "entry",
+          "transom": "none",
+          "plate": "DROP SHAFT - ONE WAY - LANDING 2",
+          "note": "the lip; no climb back"
+        },
+        {
+          "id": "south",
+          "pos": [
+            0,
+            128
+          ],
+          "normal_deg": 90,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "exit",
+          "transom": "none",
+          "plate": "DEPTH 1.1 M - DO NOT CARRY THE LAMP LOW",
+          "note": "wet landing; the way on is elsewhere"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [
+        {
+          "kind": "drop",
+          "from_socket": "north",
+          "to_socket": "south",
+          "delta_z_u": -64,
+          "note": "one-way: the generator's proof must show a return path elsewhere (safe_drops)"
+        }
+      ],
+      "mechanisms": {
+        "one_way_drop": {
+          "from_socket": "north",
+          "to_socket": "south",
+          "climb_out": false,
+          "note": "the flume takes the player down 2 levels; the drop is chosen, not sprung"
+        }
+      },
+      "encounter": {
+        "suitability": "none",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "One-way drops need a proven return route; the template never carries an encounter."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": null,
+        "notice": null,
+        "wayfinding": [
+          "DROP SHAFT - ONE WAY - LANDING 2 (shortcut string 18)",
+          "depth tag at the landing (W8)"
+        ],
+        "cues": [
+          "W (wet shaft: a gurgle at the bottom)",
+          "D (plink onto the landing)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": null,
+      "notes": "New one-way drop: the Purgatorio descent made physical - the drop is chosen, and the way back must be earned through the loop."
+    },
+    {
+      "id": "SETP_BASIN_STAIR_SEALED",
+      "template_id": "SETP_BASIN_STAIR_SEALED",
+      "tags": [
+        "dead-end",
+        "set_piece",
+        "room"
+      ],
+      "origin": "authored:new",
+      "rarity_weight": 1.5,
+      "connector_kind": null,
+      "footprint_local_u": [
+        [
+          -80,
+          -80
+        ],
+        [
+          80,
+          -80
+        ],
+        [
+          80,
+          80
+        ],
+        [
+          -80,
+          80
+        ]
+      ],
+      "floor_z_u": 0,
+      "ceiling_z_u": 144,
+      "headroom_u": 144,
+      "light_level": 140,
+      "light_band": [
+        132,
+        148
+      ],
+      "material": "weathered_brick",
+      "style": "warm",
+      "water_z_u": 0,
+      "sockets": [
+        {
+          "id": "north",
+          "pos": [
+            0,
+            -80
+          ],
+          "normal_deg": 270,
+          "width_u": 128,
+          "floor_z_u": 0,
+          "role": "dead",
+          "transom": "dark_dust",
+          "plate": "B1 - BASIN STAIR - SHUT THIS SIDE - WORKS ONLY",
+          "note": "near face unlit; the far transom is lit through the gap (W4/W17) - a promise, not a route"
+        }
+      ],
+      "pillars_local_xy_r": [],
+      "baffle_local_seg": null,
+      "stairs": [],
+      "vertical_links": [],
+      "mechanisms": {
+        "shortcut": {
+          "sealed": "basin_stair",
+          "opens": "never in this stratum",
+          "note": "the door exists and does not open; the sound behind it is a promise that is kept elsewhere"
+        }
+      },
+      "encounter": {
+        "suitability": "calm",
+        "sound_before_sight": false,
+        "convergence": false,
+        "notes": "A sealed door is never a pull into a fight. The room teaches that dim is not exit (W5)."
+      },
+      "landmark_text": {
+        "plaque": null,
+        "gauge": "door gauge: red ticks at the foot, never dated; this door has been under three times",
+        "notice": "NOTICE 63 - TRANSFER. Staff below the line keep their own lamps.",
+        "wayfinding": [
+          "B1 - BASIN STAIR - SHUT THIS SIDE - WORKS ONLY",
+          "barred code with a dim courtesy lamp (W5)"
+        ],
+        "cues": [
+          "H2 (second bell, faintest here)",
+          "S (rush on the far side, low-passed through the door)"
+        ],
+        "vignette": null
+      },
+      "default_landmark": "LM_BASIN_DOOR_GAUGE",
+      "notes": "New sealed B1 dead end: the basin stair of the sign system, present but shut. The far transom stays lit (W17)."
+    }
+  ]
+}

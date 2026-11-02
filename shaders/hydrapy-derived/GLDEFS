@@ -1,0 +1,32 @@
+
+pointlight NRLight1 { color 0.52 0.85 0.73 size 112 offset 0 0 0 } object NRLight1 { frame NRMA { light NRLight1 } }
+pointlight NRLight2 { color 1 0.61 0.29 size 112 offset 0 0 0 } object NRLight2 { frame NRMA { light NRLight2 } }
+pointlight NRLight3 { color 1 0.75 0.4 size 112 offset 0 0 0 } object NRLight3 { frame NRMA { light NRLight3 } }
+pointlight NRLight4 { color 0.32 0.76 0.82 size 112 offset 0 0 0 } object NRLight4 { frame NRMA { light NRLight4 } }
+pointlight NRLight5 { color 1 0.58 0.25 size 112 offset 0 0 0 } object NRLight5 { frame NRMA { light NRLight5 } }
+pointlight NRLight6 { color 0.7 0.9 0.32 size 112 offset 0 0 0 } object NRLight6 { frame NRMA { light NRLight6 } }
+material flat NRSWAMP { shader "shaders/sludge.fp" }
+material flat NRWATER1 { shader "shaders/water.fp" }
+material flat RSEAL5 { shader "shaders/quasi.fp" }
+HardwareShader PostProcess scene {
+ Name "NREmulsion" Shader "shaders/emulsion.fp" 330
+ Uniform float Clock = 0.0
+ Uniform float Strength = 0.0
+ Uniform float Tear = 0.0
+ Uniform int Parts = 127
+ Uniform float Ripple = 0.0
+}
+
+
+material sprite FXA0A0 { normal "materials/sprite-normal-0.png" specular "materials/black.png" }
+material sprite FXA1A0 { normal "materials/sprite-normal-1.png" specular "materials/black.png" }
+material sprite FXA2A0 { normal "materials/sprite-normal-2.png" specular "materials/black.png" }
+pointlight FXLamp { color .65 .85 1 size 280 } object FXLight { frame TNT1 { light FXLamp } }
+material flat NRWATER { shader "shaders/water.fp" }
+material flat NRFFLR2 { shader "shaders/quasi.fp" }
+
+material "models/depths/p56/s0.png" { normal "materials/oss-normal.png" roughness "materials/oss-rough.png" metallic "materials/black.png" ao "materials/oss-ao.png" }
+material sprite FXSCA0 { shader "shaders/drift.fp" }
+material texture NRWPLS3 { shader "shaders/cracks.fp" }
+material texture NRTVOU1 { shader "shaders/drift.fp" }
+material sprite FXRCA0 { brightmap "materials/applicant-rim.png" }
