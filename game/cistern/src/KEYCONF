@@ -1,0 +1,2 @@
+defaultbind "-" "netevent c7_slower"
+defaultbind "=" "netevent c7_faster"

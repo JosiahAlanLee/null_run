@@ -1,0 +1,14 @@
+version "4.10"
+#include "uzdoom/runtime.zs"
+#include "uzdoom/props.zs"
+#include "uzdoom/models.zs"
+#include "uzdoom/signals.zs"
+
+#include "depth-pieces.zs"
+
+#include "composed.zs"
+
+#include "effects.zs"
+
+#include "fx-glyph-data.zs"
+#include "fx-caster.zs"
