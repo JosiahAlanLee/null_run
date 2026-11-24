@@ -1,0 +1,43 @@
+%%TITLE Seven Beats in a Six-Beat Bar
+
+#dept[Null Run --- Acoustic Watch / Stores Department (November 1953)]
+
+== I. The Ventilation Lobby
+
+Iwas sent to the Ventilation Lobby on 25 November with a brass stopwatch, a tally card, and a narrow order from Stores: verify the duration of Reel 1872-TT1, "the twelve pipes," and close the discrepancy opened by Petition 15-C.
+
+According to Stores Catalogue Entry L1-27, the reel is a forty-eight-second tuning test written crabwise—a single melodic line played forward against its own retrograde, so that both voices meet cleanly on the forty-eighth second and finish together. According to Petition 15-C, filed two months earlier by the bearer of the extent sheet, the reel runs forty-nine seconds because the retrograde enters late by one count.
+
+The discrepancy was minor, which is why it had been assigned to me. Major discrepancies go to the Internal Audit Bureau, where they are placed in drawers that are never opened again; minor ones are handed to junior acoustic clerks with instructions to time the tape twice and sign the slip.
+
+When I reached the Ventilation Lobby, the barometer riveted beside the door read 989 millibars. A pencil mark on the brass bezel showed it had read 989 millibars in March, and again in July. Yet when I crossed to the east wall to check the intake louvres, the third row of iron slats was sealed solid with white rime, and the thermometer hung on the frame stood at minus two degrees Celsius. The catalogue entered the lobby as a sealed cave (L1-27); the petitioner entered it as East Antarctic subglacial works (L3-15). My order covered the reel, not the weather.
+
+I unlocked Case 1872-TT1, threaded the heavy magnetic ribbon onto the playback heads, and reset the stopwatch to zero. The twelve pipes began cleanly—dry, reedy tones with no vibrato, tuned to a scale whose intervals sat slightly narrower than equal temperament. I counted the measures on my tally card in sixes, marking each downbeat with a light pencil stroke. Through the first twenty-four seconds the forward line climbed steadily and the retrograde answered it from the far end of the phrase, exact as a gear train.
+
+Then came the closing bar. It was written for six beats. I counted six, waited for the two voices to close on the unison, and heard a seventh beat enter—unhurried, slightly flat, resting half a breath behind the forward line as if a thirteenth pipe had answered from the far side of a wall.
+
+The stopwatch stopped at 49.0 seconds. I rewound the reel and ran it a second time. Again: seven beats in a six-beat bar. As I lifted the pickup at forty-nine, I noticed something else. Beneath the twelve pipes, riding just under the tape hiss, ran a low, continuous vibration—69.0 hertz, the exact half-time standing wave of the Gallery 7 water box-ducts two corridors east. Either the tape had not been recorded in the Ventilation Lobby, or the lobby was now resonating in sympathy with the tape.
+
+== II. The Quiet Transfer Zone
+
+To log the reel at the Records Office, I had to carry the tally card across the East Arcade Quiet Transfer Zone. Every clerk knows Circular 14-V by heart: the East Arcade is maintained as a Quiet Transfer Zone between the hours of 06:00 and 06:00 for the comfort of residents awaiting review on Landings 4 through 9. Before stepping onto the basalt paving, I paused at the intake lectern, checked that my vulcanised felt heel dampers were seated tight, and emptied my pockets of loose coins and brass clips so nothing could ring against the stone.
+
+The arcade lamps were dim. Halfway down the colonnade, a 40-watt bulkhead cage had been draped neatly in three-ply wool felt—dyed grey, yellow ochre, and dark wine, stiff with lanolin and cold tallow so it did not scorch against the glass. The Baffle had passed through before my shift. One corner of the ochre strip rose and settled as I passed. I did not touch the felt; the Maintenance Bulletin instructs electricians to carry a hooked stripping-knife for that work, and I am not an electrician.
+
+At Landing 6, I stopped. Two Vigils stood against the far pilaster—tall, still, their three-cupped brass instruments held motionless against the basalt pier. Neither moved when I stepped onto the landing, yet the 69.0 hertz hum from the box-ducts beneath the floor seemed to gather tightly around their boots. As I passed, keeping my breath even and shallow, a single sharp sound cut clean through the low hum from somewhere down the stairwell—high, dry, and ceramic, around 3.2 kilohertz: _tick, tick, tick_.
+
+Not a boot. Not a dropped pen. Three ceramic clicks, evenly spaced, then silence. Neither Vigil turned toward me. Both angled their instruments a fraction of an inch toward the lower stairwell. I walked past them without breaking stride, reached the heavy oak door of the Records Office, and closed it softly behind me.
+
+== III. Foreign Leaves
+
+The Records Office was warm and smelled of paste and damp paper. Through the high north window above the shelving, green lake water stood level with the sill, motionless and clear for perhaps fifteen metres before fading into silt-shadow. No clerk was at the front desk. The bound Stores Catalogue lay open on the sloped reading stand at the entry for #m[1872-TT1].
+
+I set my tally card beside the book to copy my seven-beat count onto the addendum slip. As I turned the page to check the previous year's calibration mark, my thumb caught on a thicker leaf. Sewn directly into the spine between page 118 and page 119 were two extra leaves of heavy laid rag paper, visibly older than the 1953 ledger stock, stitched cleanly into the binding with waxed yellow thread. Along the foot of the first leaf lay a narrow line of damp, sweet-smelling yellow dust.
+
+I remembered Records Office Instruction 18/53 immediately: _Such leaves are not to be cut out, copied, or read aloud. They are to be left where they are sewn, the page and register entered on Schedule F, and the register returned to its shelf unopened at that place._
+
+I did not read the page aloud. I did not copy it. As I lowered the cover my eyes caught only three lines: a rubric for three readers placed before a stone face over water—_Steward, Chorister, Stranger_—and a dry clerk's note at the bottom stating that a raised hand had been held a beat before the downstroke, and that the office clock had completed its chime without the downstroke following.
+
+Seven beats where six were written. A bar waiting for its closing line.
+
+I closed the Stores Catalogue gently without brushing the yellow dust from the margin. I entered the register number, page 118, and the colour of the thread on Schedule F. Petition 16-C was already in the tray; I set my tally card on top of it and returned the volume to its shelf unopened at that place. In the East Arcade I could feel the next measure rising gently through my felt soles, counting six, and then one more. I kept the pencil in my pocket.

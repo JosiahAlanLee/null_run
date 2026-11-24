@@ -1,0 +1,84 @@
+%%TITLE The Calibration of Sounding Line 14
+
+N_ull Run — Internal Audit Bureau / Survey Bureau (November 1953)_
+
+== I. Counter 3
+
+M. K. Navarro preferred instruments that could be checked against a brass rule. An opinion could be deferred for seven years; a steel tape either met its mark or it did not.
+
+On the morning of 20 November 1953, Navarro drew Sounding Line 14 from the Stores cage against a signed chit and carried it down to the dry stores tank behind the Tidal Hub. The reel had been logged into Works & Descent three months earlier (File L1-13) with no calibration certificate, no desk register entry, and three identical depth readings of 1,200 metres to lakebed silt—a figure that flatly contradicted both Survey Bureau notice L1-01 and Audit Note L2-01, each of which placed the solid rock interface at 800 metres.
+
+Navarro did not care whether the facility stood under 800 metres of fresh water or 1,200. Knowing which body of water sat above the ceiling had never helped an auditor reconcile a stores ledger. What mattered was that a line returned without its certificate could not be left uncalibrated in the same bay as certified thermometer 1845-K.
+
+At Counter 3, M. Veber was waiting with a folded receipt.
+
+Veber was a slight, courteous man in a damp wool coat whose file stood under #m[CLASS:] #m[PERSONNEL] on one ledger and #m[CLASS: RESIDENT] on another, and whose personal effects had been entered into Stores under a part number he did not recognise. He stood two feet back from the counter rail so his boots would not scuff the painted floor line.
+
+"Good morning, Auditor," Veber said. "I see you have Line 14."
+
+"For verification only," Navarro said, setting the brass-cheeked spool on the blotter. "Your petition L3-01 is still with the Survey Bureau."
+
+"I am not inquiring about the petition," Veber said mildly. "I only wished to note that the spool came back with dust in the pawl. If you unwind it in the dry tank, you should wipe the ratchet first, or the grease will carry it onto your cuff."
+
+Navarro glanced at the brass pawl. A fine, damp yellow deposit sat in the seam beneath the screw head, smelling faintly sweet, like alder catkins or fruit left too long in a closed drawer. Stores Notice 53/9 had circulated the day before regarding the same deposit on instruments returned from the subglacial works, with instructions to brush returns down at the hatch.
+
+"Thank you, Mr. Veber," Navarro said, making a neat tick on the margin of the draw slip. "I will enter the deposit on the inspection card."
+
+"They will not wash it out," Veber remarked, neither warning nor complaining. "I used pumice soap after I returned my field thermometer, serial 21-K, and it stayed under the thumbnails until Tuesday. By the way, if you check the dry tank, the steel tape on the peg is certified to 1951. The floor was swept on Monday."
+
+== II. The Dry Tank
+
+The dry stores tank stood six paces off the Tidal Hub gallery, behind a heavy painted door stencilled #m[TANK 2 — DRY BALLAST ONLY — FOR YOUR COMFORT]. At the north end of the corridor outside it, the tall survey window stood green to the sill, the silt line resting one hand below the glass; yet inside the tank room, the air was still and dry as a limestone cellar, with no smell of lake water at all.
+
+Navarro hung the hand lamp on the iron hook by the rim and measured the empty tank first with the certified steel tape from the peg.
+
+The tank was a plain cylinder of dressed masonry, dry to the bottom, with two iron ladder-rungs bolted into the near wall and a pale chalk mark where someone had once tallied barrel counts. The steel tape dropped cleanly to the stone floor and read ten feet, six inches.
+
+Navarro entered the figure in the field notebook in pencil:
+
+> _Dry stores tank depth verified by certified steel tape: 10 ft 6 in._
+
+> _10.5 ft × 0.3048 = 3.2004 m._
+
+Then Navarro hooked the frame of Sounding Line 14 over the rim, released the brass pawl, and let the lead weight pay out into the empty cylinder.
+
+The weight descended past the first iron rung. It descended past the second. At ten feet, six inches, the lead plumb did not strike the stone floor.
+
+Navarro leaned slightly over the coping, holding the hand lamp low. The stone floor of the tank was plainly visible ten and a half feet below—dry, swept clean of grit, with the chalk tally still legible beside the drain grate. The braided hemp line passed straight down through the still air toward the floor, and did not coil, and did not slacken. The brass tally tags ticked past Navarro's gloved thumb: five yards, ten yards, twenty, thirty. The line remained taut as if weighted over a deep well, though the lead weight itself appeared to be resting quietly against the dry stone ten feet down, casting a short, neat shadow in the lamp light.
+
+At thirty-eight yards, the tension went out of the spool.
+
+Navarro locked the pawl, stood upright, and waited ten seconds to see whether the reading would change. Nothing moved in the tank. The lamp burned steady. From the corridor outside came the faint, even hum of the gallery box-ducts, carrying no draft.
+
+Navarro wound the line back onto the reel. Thirty-eight yards of dry braided hemp came up smoothly over the brass lip, smelling neither of lake silt nor of ice, only of damp stone and sweet yellow dust. When the lead weight cleared the rim, Navarro checked the bottom of the weight. It was dry, and its flat base carried a thin smear of grey lakebed silt that had not been on the tank floor.
+
+== III. Arithmetic
+
+Back at the audit desk, Navarro washed both hands twice at the corridor basin. The yellow dust remained in a thin crescent under the left thumbnail. Navarro dried the hands on a linen towel, sat down under the desk lamp, and opened File L1-13.
+
+An auditor does not speculate on the geometry of an empty tank. Speculation is not a recognised column on Form 9-B. If a certified steel tape reads 3.2004 metres and an uncertified sounding line pays out 34.7472 metres in the same vertical interval, the discrepancy is a calibration factor, and a calibration factor can be carried through the file.
+
+Navarro dipped the pen and wrote cleanly in black ink:
+
+> _Correction factor calculation:_
+
+> _3.2004 m / 34.7472 m = 0.0921._
+
+> _Apply factor to L1-13 readings:_
+
+> _For 1200 m read 1200 × 0.0921 = 110.52 m._
+
+> _For 15 m visibility read 15 × 0.0921 = 1.3815 m._
+
+> _L1-13 carry through corrected: lakebed silt 110.52 m, visibility 1.38 m._
+
+Navarro blotted the page, signed it #m[Auditor: M. K. Navarro], and placed the sheet in the Outgoing tray for Survey Bureau endorsement.
+
+On the underside of the Stores draw slip, in small, neat pencil that had not been there when the slip was issued at Counter 3, someone had added a single line in an older hand:
+
+> _J.T. — You calibrated the line to the tank. You did not check whether the tank was calibrated to the floor. Visibility at the north window remains 15 m. Figure 1.38 m not sustained._
+
+Navarro read the pencil note once, turned the slip face down, clipped it to the back of File L1-13, and stamped the cover folder #m[AWAITING ASSESSMENT].
+
+At the end of the corridor, the green water stood level with the sill of the north window, motionless as glass, and neither the tape nor the line was requested again before the quarter closed.
+

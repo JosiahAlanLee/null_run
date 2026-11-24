@@ -1,0 +1,25 @@
+@T drift There was no glacial drift on Section 16.
+@E The county survey had entered them as wash;
+Not wash.
+@CA A closure error of 3.60 chains,
+2.16, 2.88, 3.60: the sides stand as 3 to 4 to 5. It is the triangle a chainman lays out with a knotted cord to prove a corner square. The error that prevents the section from closing is the proof of a right angle, and the compiler does not know at which corner.#th("close")
+||
+3.60 CH = 237 FT 7 IN. GALLERY 9 IS DRAWN AT 216 FT. THE ERROR IS LONGER THAN THE GALLERY BY 21 FT 7 IN.
+@T needle his brass surveyor's compass had refused to settle
+@T warm the stone had been unmistakably warm,
+@T tank beside an old dry stone sink that looked ten feet deep by eye
+@C with no tracks leading away from it in the frost.
+Sheriff's Register, Search, Section 16 (L4-21). The chain is entered as found and the chainman as not returned from field duty. The second record gives the object left behind as a mahogany portfolio on a cistern coping, and the month as December.#th("name")
+@T lamp unconnected to any conduit.
+@P head bowed forward on a plain wooden chair.
+I ask whether this is the chair.#th("wait")
+@C "Do not amend the drawings."
+Completion Slip L1-43: "Six feet entered as found."#th("longer") The Survey Bureau's circular on the measurement of rooms follows this record.
+@T knock three slow, distinct knocks sounded directly beneath the floor slab
+@A the night-shift hand in the east gallery would file Petition 21-C
+PETITION 21-C IS DATED 23 DECEMBER. THREE DAYS AFTER 9 DECEMBER IS THE 12TH. THE PAPER IS PREFERRED.
+@E set it neatly on the narrow masonry ledge beside the door jamb
+Accepted.
+@A installed under Works Order 53/119,
+WORKS ORDER 53/119 IS DATED 18 DECEMBER. THE SIGN IS PASSED ON THE 9TH, NINE DAYS BEFORE IT WAS ORDERED.#th("date") #amend[THE WALK #ns] THE SIGN IS SUSTAINED.
+@T letter which had faded cleanly out and stayed dark.

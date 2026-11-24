@@ -1,0 +1,47 @@
+%%TITLE Roadside Pantheon (Exit 47)
+
+== I. Mr. Varga's Palace of Wonders
+
+Itook the job because my van needed a new alternator and Old Varga paid in crisp twenties that smelled faintly of cedar chests and wet tobacco.
+
+His place sat half a mile off Exit 47 on a two-lane stretch of Driftless highway between Dodgeville and Spring Green: a low, windowless sprawl of corrugated tin and faux-fieldstone bolted onto the side of a sandstone ridge, topped by a twenty-foot neon sign reading *VARGA'S PALACE OF WONDERS — CURIOS, AUTOMATA & MYSTERIES OF THE OLD WORLD*. Half the tubes were dead. At dusk it read *VARGA'S PALACE OF ONDERS*, buzzing like a hornet trapped in a mason jar.
+
+"It's not the transformers, Ray," Varga said—seventy or two hundred under his greasy houndstooth jacket, crow-black eyes bright, fingers twitching against the brass coins in his pocket. "The voltage is fine. The meter's spinning like a top. Something's _drinking_ the draw before it hits the glass."
+
+Inside, the museum was bigger than the tin shell outside had any business holding—a cramped, carpeted maze of coin-operated fortune tellers, two-headed calves, mechanical violins behind dusty velvet ropes, and plaster saints flaked down to the chalk. "Place looks dead, Varga," I said. "Nobody stops off Highway 18 in November."
+
+"A quarter dropped in July pays in November," Varga snapped, glancing down a side corridor. "A quarter dropped in 1978 still pays interest, provided nobody else puts a meter on it."
+
+Beside us sat a wax fortune-teller in faded crimson silk, her jaw slightly open. The pilot lamp inside her cabinet had faded from red to a dull, dry amber while we stood there. "You're talking about yourself," I said slowly.
+
+Varga looked too tired to make it a pitch. "I came over in a steamer trunk in 1904 with a Slovak glassblower who still knew three of my proper names," he muttered. "Back in the Danube hills I had crossroads, blackened spoons, a whole village leaving salt on the sill before frost. Here? You put the price where people can see it. You put a quarter slot on the altar and call it a museum. It worked for sixty years—until last month, when whatever's under the slab woke up and started undercutting my rates."
+
+== II. Beneath the Asphalt
+
+I followed the main conduit past a twenty-foot toothpick ship model and a glass diorama of an impossible cathedral to a padlocked plywood door marked *HALL OF MIRRORS — CLOSED FOR REPAIRS*. Varga stayed back by the violins. My inductive clamp meter read over forty amps—a hard draw for a room where every lamp was out—and the air leaking under the plywood smelled of wet limestone, iron mud, and crushed yellow clover in November.
+
+"What did you build this parking lot on top of, Varga?" He spat into his handkerchief. "I didn't build it! The guy I bought the lease from in ' graded the ridge flat for a supper club. There were low dirt hills where the tour-bus turnaround is now—bird-shaped, long tail pointing west. County said they were just old erosion. Dozed 'em flat and poured six inches of concrete over the lot."
+
+At the ticket booth he'd framed a copy of the grading plan. The bank was drawn out in a clean, fine line, with one word above it: _WASH_. The blue line that marked the parking lot went straight through the long tail. I unclipped my heavy screwdriver and popped the rusted hasp off the plywood door.
+
+== III. The Rival Booth
+
+The Hall of Mirrors was not forty feet long. Instead of cheap silvered glass, my Maglite opened onto a wide promenade paved with damp grey dolomite, lined by tall, tarnished pier-glasses that showed no reflection of me at all—only a dark, windless lake under a sulfur sky, and broken towers leaning slightly inward as if listening.
+
+Halfway down stood a single booth of blackened oak, tarnished brass, and tattered ochre velvet. Somebody had put a wooden chair where the quarter slot ought to be. Above the lintel a hand-bent yellow neon tube burned steady without a sixty-cycle hum; its two bare copper leads hung free in the air. Inside sat a tall, narrow figure in yellow-draped linen, hands resting calmly beside two brass tokens and a folded paper program, its face a smooth pale stillness.
+
+"You see?" Varga whimpered from the doorway. "No quarter slot. No miracle. He doesn't even ask you to believe in him."
+
+The figure tilted its head a fraction. A dry, polite offer settled behind my teeth: _Sit down. Take a program. You can leave the receipt on the table; in here nobody will ever ask you what year you drove in from._
+
+For three seconds I almost walked down the stone floor and took the chair. I was fifty-one, my knees ached when the barometer dropped, and half the neon signs I'd bent in my twenties were sitting in landfills. Then my boot heel shifted on the damp dolomite, and a deep vibration came up through the rubber sole—not from the booth, and not from Varga's neon.
+
+Three unhurried strokes came up from under the slab—the old unglaciated ridge itself rolling slightly in its sleep beneath six inches of cracked concrete, reminding both the immigrant trickster and #struck who held the stone before either had a stage. By the third stroke I had my heel off the dolomite. I backed across the sill, pulled the armored conduit clean out of the junction box with my insulated linesman's pliers, and severed the feed.
+
+%%NARROW 1 Somewhere behind the ticket booth a motor ran down. The unplugged yellow tube burned on, but a twenty-foot run of dolomite floor between two consecutive mirrors folded silently out of sight like tidewater pulling off a flat. I slammed the plywood door shut and drove three three-inch deck screws straight through the frame into the stud.
+
+== IV. Closing Time
+
+"I bought you a winter," I told Varga, dropping my pliers into the bag. "There's still a chair in there. It isn't running on your breaker box; it's running on the hole your landlord dug in that ridge."
+
+He counted out six damp twenties smelling of tobacco and old copper. As I passed the wax fortune-teller, her pilot light had worked its way back to red. Outside, freezing rain fell across the blacktop. High on the roof, every repaired letter glowed clean except the *W* in _WONDERS_, which had gone dark again—leaving a narrow yellow reflection in the wet lot where the long bird-tail crossed the grading plan. I put the twenties in the ashtray; the starter dragged once and caught on the second turn.
