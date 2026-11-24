@@ -1,0 +1,82 @@
+%%TITLE The Seventh Post, Held Closed
+
+#dept[Null Run --- Outer Gate Lodge / Personnel Office (December 1953)]
+
+== I. Change of Watch
+
+My start date on the staff list is 14 April 1942. Establishment Schedule 53/4, pinned to the cork board beside the key rack, states that the establishment dates from 1953. I have filed Petition 20-C asking that my 1942 entry stand, and asking also for a replacement livery, since the ochre wool of my cuffs has worn pale at the seams and takes salt-crust whenever the limestone sweats.
+
+Both requests were acknowledged, numbered, and deferred.
+
+The gate lodge sits where the county road ends at the edge of Hawksmoor County, though if you step through the rear door onto the descent stair, the rock is sealed limestone with no daylight at any hour and no surface outlet in any transect. I do not try to reconcile the road outside the front glass with the stair behind the desk. A night attendant's duty is the gate log, the property book, and the seven folders in the lower drawer.
+
+At 22:00, the bulkhead pilot lamp over the rear arch began its slow shift—not a flicker, for nothing in the lodge flickers, merely a gradual, unhurried fade from deep red toward a dull, dry amber.
+
+I looked up from the gate log toward the outer glass.
+
+The caller was standing on the gravel apron beyond the glass, facing away from the lodge with their back to the road. They wore a long, pleated dark coat with the collar turned up and a small square cloth tag stitched flat between the shoulder blades. They carried no luggage.
+
+I uncapped my pen, drew a ruled line beneath the 18:00 entry, and wrote cleanly in the margin:
+
+%%BLOCK doc
+
+> 22:00 — Caller present at outer glass. Back to road. No luggage. Nearer.
+
+On 14 December they had stood at the edge of the gravel by the signpost. On 18 December they were six paces inside the apron. Tonight they stood perhaps twelve feet from the glass, motionless, showing only the neat pleats of the coat and the stitched tag.
+
+== II. The Property Book
+
+At 23:15, a petitioner came down the county road—or up the stair; the latch clicked and the cold came in, and I did not ask which way the wind had blown them. Their coat collar was white with frost, as if they had climbed out of the minus-forty air above the East Antarctic stairhead, though the glass showed only bare winter road.
+
+They placed three items on the counter for intake, as the notice requires. None of the three were objects.
+
+I opened the property book, wrote the receipt number (#m[53-G17]), and entered them on one line under #m[CLASS: EQUIPMENT], because the book has no other column:
+
+1. A first name.
+
+2. The colour of a room.
+
+3. What snow feels like.
+
+"The first is a name, not an object," the petitioner said politely, inspecting the carbon slip. "And the receipt marks all three not returnable."
+
+"That is the standard form," I said. "If you wish to have the name entered as a name, or the line struck, you may file a petition at Counter 2. For your comfort, the comfort standard holds the stair at twelve degrees."
+
+They thanked me, folded Receipt 53-G17 into their pocket, and stepped through the rear door toward the stair. When the door closed, the frost on the counter dried without leaving water.
+
+I returned the property book to the shelf beside the Appointments Ledger. Three days earlier, Auditor L. M. Chen had audited the Appointments Ledger (Audit Note L2-19) and found that while the binder's certificate in the front matter swore to 107 leaves— 214 pages—the physical count on the trolley was 106 leaves, or 212 pages. Pages 213 and 214, onto which Entry 214 (a caller who presented on 2 June 1936 and was asked to wait) had been carried forward sixty-eight times across seventeen years, stood on no leaf at all.
+
+The audit had been filed cleanly. The chair at the end of the intake gallery remained set aside for the appointment.
+
+== III. Counterweight
+
+At 01:00, the house phone rang once—a dry, single stroke from the Personnel Office.
+
+"Establishments," the voice said. "Bring the seventh folder to the desk. Do not open it."
+
+I unlocked the bottom drawer.
+
+Establishment Schedule 53/4 lists seven posts kept on the establishment as counterweight. They carry no duties and draw no allowance; they are neither to be struck off nor filled. The rule is explicit: _the holder of the seventh post is not to be shown their own folder. The folder is brought to the desk on request and held closed._
+
+Beside the seven folders sat a requisition slip for Docket 1953-B, which Records Office Weight Return 53/6 had weighed on the stores scale four days earlier at forty-one pounds, eight ounces—though folders of its class weigh four pounds and less, and Docket 1953-B is held in no drawer of any office. Under the new rule, no folder could leave a drawer unless one of equal weight was entered.
+
+I lifted the seventh folder out with both hands. It was heavier than it looked—not forty-one pounds, perhaps nine or ten—bound in pale grey manila and tied with a cotton tape that had never been untied. I set a nine-pound cast-iron calibration weight from the parcels scale into the empty space in the drawer so the cabinet would stay balanced, and laid the seventh folder flat under the green desk lamp.
+
+Beside it lay the open Staff Index. I did not touch the seventh folder's tape, but my eye fell on the open index page. Between *HALE* and *HALLAM*, the margin was narrow and blank; no name was entered there. Along the foot of that page lay a thin, damp ridge of yellow dust, sweet-smelling as alder. The schedule forbids brushing it out.
+
+A page turned—not on my desk, for my hands were flat on the blotter, but somewhere in the silence of the lodge, with the crisp, dry sound of heavy rag paper settling.
+
+I looked up at the outer glass.
+
+The caller was now one pace from the windowpane. Still facing away. Still carrying no luggage. The pilot lamp over the rear arch had faded all the way to a steady, pale amber.
+
+I placed both palms squarely on the closed cover of the seventh folder and held it shut against the blotter.
+
+I did not untie the tape. I did not look inside to see whether the name on the flyleaf was the one missing between HALE and HALLAM, or whether the start date read 1942, or whether the classification box was stamped #m[EQUIPMENT]. As long as the folder stayed closed under my hands, the weight held, and the caller remained on the far side of the glass.
+
+At 02:00, the shift bell did not ring. I reached out with my right hand—keeping my left palm flat on the folder—uncapped my pen, and entered the next line in the gate log:
+
+%%BLOCK doc
+
+> 02:00 — Caller at glass. Back to road. No luggage. Folder held closed. AWAITING ASSESSMENT.
+

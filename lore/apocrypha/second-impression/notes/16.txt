@@ -1,0 +1,19 @@
+@C old Martin Halvorsen walked the four-mile perimeter of Section 16
+#smallcaps[Halvorsen], twice: Arthur, the deponent of the first record, and Martin, here. A Martin is also the reader who stayed in the hollow.#th("name") The Catalogue has one entry and a query.
+@T drift _Drift: nil,_
+@E a piece of ground remembers everyone who ever stood on it,
+It does not remember. It keeps.
+@T needle drifted lazily off north and refused to settle.
+@T warm Under his palm, the dolomite was steadily, unmistakably warm.
+@T close always falling three point six zero chains short,
+@C checking a barometer that never moved from 989 millibars;
+The agency's paper stops in December 1953. A man in a coat of that year, with a dispatch box, is seen here "three winters ago" by a witness whose own year is not given.#th("date")
+@T knock three slow, unhurried knocks sounded
+@P A courtesy to older tenants costs nothing,
+I have left nothing on any ledge. I ask whether that has been entered against me.
+@C leaving Section 16 to keep its own balance in the dark.
+Here the sixteen records end. The contents give seventeen.#th("count")
+@A walked the four-mile perimeter of Section 16
+FOUR SIDES OF 80 CHAINS ARE FOUR MILES. BY THE FIELD BOOK THE PERIMETER IS 314.96 CH. HE WALKS FIVE CHAINS AND FOUR LINKS FARTHER THAN THE SECTION GOES.
+@C and set it neatly on the flat top of the southwest stone post.
+Petition 21-C asks under which regulation the Office forbade the leaving of bread-ends on the ledge. No such regulation has been found. The prohibition is observed.#th("knock")

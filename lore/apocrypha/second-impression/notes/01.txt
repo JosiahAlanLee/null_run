@@ -1,0 +1,43 @@
+@CA give it a shelf mark.
+The shelf mark given is 14-C. The compiler has not been able to draw Box 14-C, and the Diocesan Archive named is not among the Office's correspondents. The deposition is dated seventy-two years, eleven months and five days after the date stamped on its wrapper at the Outer Gate Lodge.#th("date") Dates are printed as found.
+||
+INTERVAL CHECKED: 72 Y 11 M 5 D. CORRECT. A DOCUMENT RECEIVED BEFORE IT WAS WRITTEN IS FILED UNDER THE DATE OF RECEIPT.
+@C the estate of Father Edmund Hale,
+#smallcaps[Hale] is the last name entered in the Staff Index before the narrow margin.#th("blank") The Office has not at any time employed a priest.
+@T play PROLEGOMENA TO THE SECOND MASQUE:_
+@CA There were thirty-six pages.
+Fourteen pages of apparatus and twenty-two of dialogue. The leaf held in the Printed Office drawer (L4-16) is one leaf, without a page number, and the compiler cannot say from which of the thirty-six it comes.
+||
+14 + 22 = 36. THE SUM CLOSES.
+@T three a Steward, a Chorister, and a Stranger
+@E "There are fifty coulees like that between here and Lodi," Martin said.
+Fifty-one.
+@T dust resinous yellow dust
+@C impossible for a 40-foot face.
+At 1,125 feet in the second a forty-foot face returns in 0.07 s. A return 0.4 s later than that is a face 264 feet off. The bowl is entered at forty. The same interval is entered against a forty-foot nave in the fifteenth record.#th("echo")
+@T dismissal He did not say the dismissal.*
+@T stair He took the wrong stairs.*
+@E moving down the wet talus with the unhurried certainty of a host
+Tenant. Not host.
+@C Five hours seemed to pass in the space of a single breath.
+The record gives the interval as 5:50 to 6:05, which is fifteen minutes, and as five hours. Both figures are printed.
+@T hand a beat before the downstroke.
+@T2 dust yellow dust
+@T seven seven beats where the ear expected six
+@A She was forty-seven years old, or should have been.
+23 + 2 + 22 = 47. CLOSES. A SECOND SUM IN ONE RECORD HAS CLOSED. THE RECORD IS REFERRED.
+@T wait keep a host waiting twenty-two years."
+@C tight enough to outlast the rest of the book.
+Records Office Instruction 18/53: such leaves are not to be cut out, copied, or read aloud. They are to be left where they are sewn and entered on Schedule F.#th("leaf") The deponent has done the first and the second.
+@CA I am going to leave the box unlocked.
+The record ends here. Its last quotation is its first sentence; the compiler has compared the two and they agree to the comma. A record that ends where it begins cannot be given a leaf count by the usual method, and has been weighed instead.
+||
+ON THE SCALE: 3 LB 12 OZ. LEAVES NOT COUNTED. THE BOX IS ENTERED AS UNLOCKED AND HAS NOT BEEN FOUND.
+@E the positioning of three readers against a natural stone reflector,
+Four.
+@C London: Privately Printed at the Sign of the Pale Moth, 1898_
+No printer at that sign is entered in any directory held by the Printed Office. The Printed Office holds one directory.
+@A I ran three miles down County C in the dark.
+DISTANCE NOT CHECKED. THE ROAD IS NOT IN THE GAZETTEER.
+@C took an apprenticeship at a small hand-bindery in Mineral Point,
+See the binder's certificate at the head of this volume, and the Catalogue under #smallcaps[Lindholm].#th("leaf")

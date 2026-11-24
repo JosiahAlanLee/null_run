@@ -1,0 +1,38 @@
+@C told the driver to take the old Military Ridge track west.
+The county of the title is Hawksmoor. The towns, the river and the road named in this record belong to a county the Office gazetteer does not hold; the gazetteer holds one county. Place-names are printed as found.
+@C He was seventy-one, gaunt as a winter heron,
+The Deputy Surveyor of the county field book is E. T. Paige, and the chainman C. R. Lowe, entered as not returned from field duty in October 1891. This record gives the surveyor as E. Pinchot, the man not returned as T. Vane, and the month as December.#th("name") The Office holds one field book.
+@E "The Laurentide ice came down four times
+Five.
+@T drift And every time, the ice split around this pocket.
+@S A mound the Winnebago refused to camp within a mile of."
+=> A mound no one has ever camped within a mile of."
+@CA It faces sixteen degrees east of north
+Sixteen degrees; Section 16. The compiler notes the two figures and draws nothing from them.
+||
+COINCIDENCE IS NOT A COLUMN ON FORM 9-B.
+@T warm The stone was warm
+@S _Carcosa_, they called it,
+=> #struck, they called it,
+@CA they called it,
+A name stood here in the first impression. It has been struck under Form 9-B, the name being entered elsewhere as the property of another house. The sentence has been examined and stands without it.#th("play")
+||
+TWO FURTHER NAMES STRUCK IN THIS VOLUME. TOTAL THREE. THE FORM PROVIDES TWO LINES.
+@C A living benchmark holds a fourth-dimensional plat far better than iron."
+The fifth monument in the county register is an iron pin, set at the centre of the section on 13 October 1891. The fifth entry in the field book has no signature.
+@T longer the stone sides seemed to drop away for a hundred yards
+@C measured nine feet, eight inches deep;
+Nine feet eight inches by the Sheriff's tape. "Maybe ten feet" by the narrator's eye, and a hundred yards by the same eye a sentence later. Ten feet six inches by certified steel tape at the dry stores tank, where the line then paid out thirty-eight yards.#th("tank") Three depths for a dry stone sink. All three are carried.
+@CA consistent closure error of 4.7 chains
+4.7 chains here; 3.60 chains in the county field book, on three runs in February 1892.#th("close") The township is given here as 7 North, Range 3 East. The Office's survey is filed at 5 North, Range 8 West.
+||
+4.70 LESS 3.60 = 1.10 CH = 72 FT 7 IN. NO SECTION ON FILE IS SHORT BY 72 FT 7 IN. DIFFERENCE ENTERED AS FOUND.
+@T needle the compass needle refuses to settle
+@E the rock there is uncommonly warm for January.
+It is warm in every month.
+@E "The five nails that hold the county down."
+Six.
+@C count the thirteen blind niches under the cornice that no builder's invoice ever billed for
+Thirteen where twelve were paid for. Compare the reel of twelve pipes, in which a thirteenth is twice reported.#th("seven")
+@P "Why did you bring me?" I whispered.
+I asked the same of the attendant who brought me this volume. I was told: to pass the time.

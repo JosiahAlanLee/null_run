@@ -1,0 +1,21 @@
+@T dust smelled faintly of cold iron and damp alder.
+@T play a two-act verse drama whose title page had been water-stained
+@C The footnotes ran for two hundred and fourteen pages.
+214: the page of the Appointments Ledger that stands on no leaf; the part number of a thrust bearing; the number of pages the present volume is certified to hold.#th("count")
+@T interiors a sealed limestone cavern where no daylight fell at any hour.
+@CAP Forty-one pounds, eight ounces. For one sheet of paper that bent lightly between my fingers when I picked it back up.
+Records Office Weight Return 53/6 enters Docket 1953-B at forty-one pounds eight ounces on the stores scale, in a class of four pounds and under, and enters it as held in no drawer of any office. The binder's certificate of the present volume returns the same figure for the volume as bound.#th("weight") The compiler has added the sixteen weights printed at the heads of the sixteen records, twice, on different days, and makes them thirty-two pounds exactly. The difference is nine pounds eight ounces. It is entered against the seventeenth record, which is in the contents and is held closed. The compiler has been asked whether the present volume is Docket 1953-B, and has replied in writing that a docket which is withdrawn, cited everywhere and held in no drawer cannot be a volume which is on the compiler's desk.
+||
+#amend[IS NOT DOCKET 1953-B #ns] #amend[IS DOCKET 1953-B #ns] SIXTEEN WEIGHTS RE-ADDED IN AUDIT: 32 LB 1 OZ. COMPILER'S TOTAL NOT SUSTAINED. THE DIFFERENCE IS NOW 9 LB 7 OZ, WHICH IS NOT THE WEIGHT LEFT IN THE DRAWER EITHER.
+||
+I have carried this volume from the counter to the chair and back. I am able to say that it is not heavy. I ask what was weighed.
+@C completing the second act without speaking a single line aloud_.
+The present volume has been sewn. The compiler was not consulted as to the thread.#th("leaf")
+@T caller They carried no luggage.
+@T lamp left the shop lamp burning steady,
+@E for thirty-five years,
+Thirty-six.
+@A A four-page signature of heavy laid rag weighs less than two ounces.
+41 LB 8 OZ = 664 OZ. AT TWO OUNCES THE SIGNATURE: 332 SIGNATURES, OR 1,328 PAGES. THE FOLIO HAS 214 PAGES AND TWELVE LEAVES.
+@C citing a binder's receipt dated the very Tuesday I was sitting at my bench.
+The pamphlet lands on Cart 14 on a Tuesday. The telegram reaches the Museum on a Tuesday. The thumbnail of the seventh record is clean by Tuesday; the east wing comes down on one; this folio arrives on a Tuesday and is finished on it. The compiler works Tuesdays.

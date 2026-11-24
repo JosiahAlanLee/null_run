@@ -1,0 +1,84 @@
+%%TITLE Traverse Error: 3.60 Chains Inward
+
+N_ull Run — Hawksmoor County Survey (1892) / Works & Descent (December 1953)_
+
+== I. Section 16, Township 5 North, Range 8 West (February 1892)
+
+E. T. Paige had chained half of Hawksmoor County in thirty years and had never once failed to close a square mile in clear weather.
+
+He stood on the dolomite ridge of Section 16 on the morning of 19 February 1892, blowing into his wool mittens while his hired chainman—a quiet farm boy from the next township, hired by the day because the county had not yet replaced C. R. Lowe—drove the brass-shod pin at Monument 4.
+
+There was no glacial drift on Section 16. Every neighbouring section to the east and north lay under twenty feet of gravel and scraped cobble left by the ice, as W. Harris had logged for the ironworks back in 1872 (#m[Boring 1 through 5: Drift: nil]). Here, the red clay sat thin over bare dolomite and pockets of lead ore. West of the old ironworks property line, low earth-banks ran along the crest of the ridge. The county survey had entered them as wash; Harris's ironworks crew did not cut there, and Paige walked his line around them without comment.
+
+"Read it again," Paige called across the frozen turf.
+
+The boy squinted at the link-tag. "Seventy-seven chains, eighty-four links, Mr. Paige."
+
+Paige entered the figure in his field book in hard pencil beside the runs of 8 February and 11 February. All three runs agreed to the link:
+
+> _Mon. 4 to Mon. 1, East: 80.00 ch._
+
+> _Mon. 1 to Mon. 2, South: 80.00 ch._
+
+> _Mon. 2 to Mon. 3, West: 77.12 ch._
+
+> _Mon. 3 to Mon. 4, North: 77.84 ch._
+
+He worked the squares in the margin with gloved fingers: 2.88 squared was 8.2944; 2.16 squared was 4.6656; sum 12.96; square root 3.60.
+
+A closure error of 3.60 chains, falling inward—always inward, toward the empty centre of Section 16, where he had driven the fifth monument, an iron pin, on 13 October 1891.
+
+Paige looked back toward Monument 3 at the southwest corner. Twenty-five paces short of that stone post, his brass surveyor's compass had refused to settle—the needle swinging lazily from northeast to southeast as if drawn by a buried seam of iron that no boring log recorded. And when he had laid his bare palm against the north face of the dolomite outcrop beside the post to steady himself, the stone had been unmistakably warm, though the February air stood below twenty degrees and the sun had not touched that north face since October.
+
+He did not mention C. R. Lowe to the new boy.
+
+On 6, 7, 9, and 10 October 1891, Lowe had signed the field book cleanly at all four stone corner posts. On 13 October, they had walked inward to set the iron pin at the centre of the section, beside an old dry stone sink that looked ten feet deep by eye and smelled faintly of wet chalk. Paige had turned back to check the foresight on the transit. When he looked down at the field book to pass Lowe the pencil for the fifth signature, the line stood blank, and Lowe was not on the ridge.
+
+They had searched until dusk and found only Lowe's steel chain, coiled neatly at the foot of the northwest post, with no tracks leading away from it in the frost.
+
+Paige closed the field book, slipped the rubber band over the leather cover, and left the 3.60-chain error standing in the county register without explanation. A deputy surveyor records what the chain reads. He does not argue with a section that refuses to lie flat.
+
+== II. Works Order 53/112: Gallery 9 (December 1953)
+
+Sixty-one years later, on the morning of 9 December 1953, two Works & Descent electricians named Krell and Doyle walked down the service corridor of Section 16, Township 5 North, Range 8 West, carrying hand lamps, insulated shears, and a 250-foot steel tape.
+
+Their paper was Works Order 53/112: _Feeder isolation, Gallery 9. Two men, hand lamps, first bell._
+
+According to the gauge at the corridor door, Gallery 9 stood below the 700-metre line in the East Antarctic subglacial range, at minus two degrees Celsius. Neither Krell nor Doyle remarked on the county grid reference printed at the top of the order. A man who spends twelve hours a shift pulling armoured cable through limestone learns early not to read the letterhead.
+
+"Listen to the meter," Doyle said at the main junction panel outside Gallery 9.
+
+Inside the glass housing, the aluminium disc of the watt-hour meter was spinning hard enough to hum—drawing a steady forty-amp load into Gallery 9. Yet when Krell cracked the heavy iron door of the gallery and shone his hand lamp down the tiled corridor, not a single overhead fixture was lit.
+
+Except one.
+
+Far down the corridor—farther than a 216-foot gallery had any right to look—a single pale glass lamp burned steady above a low, tiled booth set flush against the end wall. There was no flicker and no sixty-cycle hum. When Krell raised his hand lamp higher, both men could see the lamp's two bare copper leads hanging loose in the air beside the bracket, unconnected to any conduit.
+
+Inside the booth sat a heavy, motionless shape in a dark oiled coat, head bowed forward on a plain wooden chair.
+
+"Not on any circuit," Krell muttered, checking the order. "Don't walk down there. Just pull the isolator."
+
+Doyle gripped the red Bakelite handle of the main isolator switch, braced his boot against the cinderblock plinth, and threw it open.
+
+A single dull _clunk_ echoed through the junction box. The spinning disc in the meter slowed and stopped.
+
+No fixture in Gallery 9 went dark, because none had been lit. The unplugged lamp above the far booth burned on,
+
+steady and pale. Yet as both men watched through the open doorway, the long tiled corridor quietly shortened—not with a crash, not with a shudder of dust, merely a smooth, silent contraction of perspective, as if an unseen stagehand had pulled the far wall six feet closer while they blinked.
+
+Krell did not swear. He hooked the brass ring of the 250-foot steel tape over the door jamb and walked the length of the corridor while Doyle held the zero mark. He stopped twenty feet short of the booth—far enough to read the brass bench-mark bolted into the base of the end wall—and called the number back.
+
+"Two hundred and ten feet," Krell said.
+
+Doyle checked the folded blueprint clipped to the works order. "Drawings say two hundred and sixteen."
+
+"Enter six feet as found," Krell said, reeling in the tape. "Do not amend the drawings."
+
+As he coiled the last ten feet of steel ribbon, three slow, distinct knocks sounded directly beneath the floor slab—_knock, knock, knock_—spaced evenly, like a hammer struck against deep dolomite.
+
+Both men stood still. Three days later, the night-shift hand in the east gallery would file Petition 21-C noting that the floor had settled six inches since the last survey, and asking under which regulation the office had forbidden leaving the ends of the bread ration on the stone ledge.
+
+Krell reached into his coat pocket, took out the dry crust of his morning roll, and set it neatly on the narrow masonry ledge beside the door jamb without looking at Doyle. Doyle pretended not to see.
+
+They locked the isolator with a brass padlock, logged the seal number on Works Order 53/112, and walked back out toward the main gallery—passing beneath the newly re-glassed transom sign installed under Works Order 53/119, where every letter glowed steady except the *R*, which had faded cleanly out and stayed dark.
+
